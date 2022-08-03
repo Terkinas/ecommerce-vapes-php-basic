@@ -95,6 +95,7 @@
         <div class="col-span-2 h-80">
             @else
             <div class="">
+                <p></p>
                 @endif
 
 
