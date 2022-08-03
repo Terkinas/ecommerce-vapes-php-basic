@@ -4,7 +4,7 @@
 
 
 <main class=" bg-white relative overflow-hidden">
-    <div class="bg-white  flex relative items-center overflow-hidden">
+    <div class="bg-white  flex relative items-center overflow-hidden mb-8">
 
 
         <!-- svg -->
@@ -13,9 +13,9 @@
 
         </div>
 
-        <div class="container mx-auto px-3 lg:px-12 sm:flex-row relative pt-2 pb-8 sm:pt-8">
+        <div class="container mx-auto px-3 lg:px-12 sm:flex-row relative pt-1 pb-8 sm:pt-8">
 
-            <div class="h-fit sm:block max-h-72  sm:w-2/3 lg:w-fit mx-auto rounded-md my-4 relative overflow-hidden">
+            <div class="h-fit sm:block max-h-72  sm:w-2/3 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
                 <img src="{{ asset('images/commerce/welcome/disposable-vapes-header.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
             </div>
 
@@ -28,7 +28,7 @@
                         Pilką debesį
                     </span>
                 </h1>
-                <p class="text-sm sm:text-base text-gray-700 mt-2">
+                <p class="text-sm sm:text-base text-gray-700 mt-2 my-6">
                     Subscribe to our journal so you won't miss an opportunity to find out about deals first. Products are carefully sorted, products quantity is limited.
                 </p>
                 <!-- <div class="flex mt-8">
@@ -44,7 +44,7 @@
                 <div class="flex w-full md:justify-start justify-center items-end">
                     <div class="relative mr-4 lg:w-full xl:w-1/2 w-3/4 mt-8">
 
-                        <a href="{{route('products.index')}}" class="text-center rounded border-1 border-transparent bg-black text-sm p-2.5 py-3 text-white w-full  font-semibold  gray-300 ">
+                        <a href="{{route('products.index')}}" class="block text-center rounded border-1 border-transparent bg-black text-sm p-2.5 py-3 text-white w-full  font-semibold  gray-300 ">
                             <i class="fa-solid fa-store mr-1"></i>
                             <span>Išpūsti katalogą</span>
                         </a>
@@ -52,7 +52,7 @@
                     <!-- <a class="text-center text-gray-900  border-1 border-grey-100 py-3 px-6 font-semibold focus:outline-none hover:bg-gray-50 bg-gray-100 rounded text-sm w-24 sm:w-52 whitespace-nowrap">Sign Up</a> -->
                 </div>
                 <p class="text-xs mt-2 text-gray-400 mb-8 w-full text-center sm:text-left">Products are designed by <span class="text-blue-500">{{ config('app.name') }} Inc.</span></p>
-                <div class="flex lg:flex-row md:flex-col justify-center sm:justify-start scale-90">
+                <div class="flex lg:flex-row md:flex-col justify-center sm:justify-start scale-90 my-3">
                     <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
                             <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
