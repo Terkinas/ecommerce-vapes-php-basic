@@ -19,10 +19,10 @@
                 <img src="{{ asset('images/commerce/welcome/disposable-vapes-header.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
             </div>
 
-            <div class="min-h-screen">
+            <div class="my-4">
 
                 <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative sm:mt-16 ">
-                    <span class="w-20 h-2 bg-green-500 mb-12 rounded-md">
+                    <span class="w-20 h-2 bg-blue-500 mb-12 rounded-md">
                     </span>
                     <h1 class="mb-6  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800">
                         Gaudyk
@@ -34,10 +34,10 @@
                         Subscribe to our journal so you won't miss an opportunity to find out about deals first. Products are carefully sorted, products quantity is limited.
                     </p>
                     <!-- <div class="flex mt-8">
-                    <a href="#" class=" py-2 px-4 rounded bg-green-500 border-2 border-transparent text-white text-md mr-4 hover:bg-green-400 font-semibold">
+                    <a href="#" class=" py-2 px-4 rounded bg-blue-500 border-2 border-transparent text-white text-md mr-4 hover:bg-blue-400 font-semibold">
                         Pradėti
                     </a>
-                    <a href="#" class=" py-2 px-4 rounded bg-transparent border-2 border-green-500 text-green-500 hover:border-green-400 hover:text-green-500 text-md font-semibold">
+                    <a href="#" class=" py-2 px-4 rounded bg-transparent border-2 border-blue-500 text-blue-500 hover:border-blue-400 hover:text-blue-500 text-md font-semibold">
                         Skaityti daugiau
                     </a>
                 </div> -->
@@ -46,7 +46,7 @@
                     <div class="flex w-full md:justify-start justify-center items-end">
                         <div class="relative mr-4 lg:w-full xl:w-1/2 w-3/4 mt-8">
 
-                            <a href="{{route('products.index')}}" class="block text-center rounded border-1 border-transparent bg-green-500 text-sm p-2.5 py-3 text-white w-full  font-semibold  ">
+                            <a href="{{route('products.index')}}" class="block text-center rounded border-1 border-transparent bg-blue-500 text-sm p-2.5 py-3 text-white w-full  font-semibold  ">
                                 <i class="fa-solid fa-store mr-1"></i>
                                 <span class="font-bold">Išpūsti katalogą</span>
                             </a>
@@ -74,7 +74,9 @@
                                 <span class="title-font font-medium text-sm whitespace-nowrap">App Store</span>
                             </span>
                         </button>
+
                     </div>
+                    <p class="text-xs mt-2 text-gray-400 mb-8 w-full text-center sm:text-left">We will be launching our app soon.</p>
                 </div>
 
             </div>
@@ -226,7 +228,7 @@
         <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <div>
-                    <p class="inline-block py-px mb-4 text-xs font-semibold tracking-wider text-green-400 uppercase rounded-full bg-teal-accent-400">
+                    <p class="inline-block py-px mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase rounded-full bg-teal-accent-400">
                         {{ config('app.name') }}
                     </p>
                 </div>
@@ -249,7 +251,7 @@
                 </p>
             </div>
             <div class="mx-auto lg:max-w-2xl">
-                <div class="relative w-full transition-shadow duration-300 hover:shadow-xl bg-green-100 overflow-hidden rounded-lg">
+                <div class="relative w-full transition-shadow duration-300 hover:shadow-xl bg-blue-100 overflow-hidden rounded-lg">
                     <img class="object-cover object-top w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96" src="{{ asset('images/commerce/welcome/disposable-vapes-video-thumbnail.png') }}" alt="" />
                     <a target="_blank" href="https://www.youtube.com/watch?v=F8i2BMsFBik&ab_channel=UnCommonLee" aria-label="Play Video" class="absolute inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 group hover:bg-opacity-25">
                         <div class="flex items-center justify-center w-16 h-16 transition duration-300 transform bg-gray-100 rounded-full shadow-2xl group-hover:scale-110">
@@ -522,7 +524,7 @@
                 <div>
                     <figure class="flex mb-4">
                         <div class="flex-shrink-0 mr-3">
-                            <span class="block w-16 h-16 rounded-lg bg-gray-100 text-green-400 flex items-center justify-center">
+                            <span class="block w-16 h-16 rounded-lg bg-gray-100 text-blue-400 flex items-center justify-center">
                                 <i class="fa fa-users text-xl"></i>
                             </span>
                         </div>
