@@ -15,22 +15,22 @@
 
         <div class="container mx-auto px-3 lg:px-12 sm:flex-row relative pt-1 pb-8 sm:pt-8">
 
-            <div class="h-fit sm:block max-h-72  sm:w-2/3 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
-                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
+            <div class="h-fit sm:block max-h-72  sm:w-4/5 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
+                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
             </div>
 
-            <div class="my-4">
+            <div class="my-4  md:bg-gray-100 md:rounded-xl">
 
-                <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative sm:mt-16 ">
+                <div class="sm:w-full lg:w-4/5 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
                     <span class="w-20 h-2 bg-green-600 mb-12 rounded-md">
                     </span>
-                    <h1 class="mb-6  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800">
+                    <h1 class="mb-6  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">
                         Gaudyk
-                        <span class="text-5xl sm:text-6xl">
+                        <span class="py-2 text-5xl sm:text-6xl">
                             Pilką debesį
                         </span>
                     </h1>
-                    <p class="text-sm sm:text-base text-gray-700 mt-2 my-6">
+                    <p class="text-sm sm:text-base text-gray-700 mt-2 my-6 md:w-4/5 md:mx-auto">
                         Subscribe to our journal so you won't miss an opportunity to find out about deals first. Products are carefully sorted, products quantity is limited.
                     </p>
                     <!-- <div class="flex mt-8">
@@ -43,19 +43,21 @@
                 </div> -->
 
 
-                    <div class="flex w-full md:justify-start justify-center items-end">
-                        <div class="relative mr-4 lg:w-full xl:w-1/2 w-3/4 mt-8">
+                    <div class="text-center w-full md:justify-start justify-center items-end md:items-center md:flex flex-col justify-center">
+                        <div class="relative mx-auto sm:w-full lg:w-full xl:w-1/2 w-3/4 mt-8">
 
-                            <a href="{{route('products.index')}}" class="block text-center rounded border-1 border-transparent bg-green-600 text-sm p-2.5 py-3 text-white w-full  font-semibold  ">
+                            <a href="{{route('products.index')}}" class=" block text-center rounded border-1 border-transparent bg-green-600 text-base p-2 py-4 hover:bg-green-500 md:mx-auto md:w-80 text-white w-full  font-semibold
+                                    md:py-4 md:text-base ">
                                 <i class="fa-solid fa-store mr-1"></i>
                                 <span class="font-bold">Išpūsti katalogą</span>
                             </a>
                         </div>
+                        <p class="text-xs mx-auto mt-2 text-gray-400 mb-8 w-full  text-center">Products are designed by <span class="text-green-500">{{ config('app.name') }} Inc.</span></p>
                         <!-- <a class="text-center text-gray-900  border-1 border-grey-100 py-3 px-6 font-semibold focus:outline-none hover:bg-gray-50 bg-gray-100 rounded text-sm w-24 sm:w-52 whitespace-nowrap">Sign Up</a> -->
                     </div>
-                    <p class="text-xs mt-2 text-gray-400 mb-8 w-full text-center sm:text-left">Products are designed by <span class="text-green-500">{{ config('app.name') }} Inc.</span></p>
-                    <div class="flex lg:flex-row md:flex-col justify-center sm:justify-start scale-90 my-3">
-                        <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+
+                    <div class="md:mx-auto flex flex-nowrap lg:flex-row md:flex-col justify-center sm:justify-start scale-90 my-3 sm:scale-100">
+                        <button class="bg-gray-100 md:bg-white inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
                                 <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
                             </svg>
@@ -64,7 +66,7 @@
                                 <span class="title-font text-sm font-medium whitespace-nowrap">Google Play</span>
                             </span>
                         </button>
-                        <button class="bg-gray-100 inline-flex py-3 px-4 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+                        <button class="bg-gray-100 md:bg-white inline-flex py-3 px-4 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
                                 <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
                                 <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
@@ -76,7 +78,7 @@
                         </button>
 
                     </div>
-                    <p class="text-xs mt-2 text-gray-400 mb-8 w-full text-center sm:text-left">We will be launching our app soon.</p>
+                    <p class="text-xs mt-2 text-gray-400 mb-8 w-full text-center ">We will be launching our app soon.</p>
                 </div>
 
             </div>
@@ -90,17 +92,19 @@
 
     @if(count($products) > 0)
 
-    <h2 class="mx-4 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+    <h2 class="mx-4 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none
+                md:w-4/5 md:text-center md:mx-auto ">
         Naujienos <br class="hidden md:block" />
 
     </h2>
 
-    <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8">
+    <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
+                md:w-4/5">
 
 
         @foreach ($products as $key=>$product)
         @if ($key == 6)
-        <div class="col-span-2 h-80">
+        <div class="col-span-2 h-80 md:hidden">
             @else
             <div class="">
                 <p></p>
@@ -275,7 +279,7 @@
 
         <!-- analizes -->
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-8">
-            <div class="grid gap-5 row-gap-8 lg:grid-cols-2">
+            <div class="md:w-4/5 md:mx-auto grid gap-5 row-gap-8 lg:grid-cols-2">
                 <div class="flex flex-col justify-center">
                     <div class="max-w-xl mb-6">
                         <div>
@@ -479,7 +483,7 @@
 
     <!-- SECTION-FEATURES //start -->
     <section class="bg-gray-50 py-12">
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-xl mx-auto px-4 md:w-4/5">
             <h2 class="text-3xl font-bold mb-8">Why to choose us</h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

@@ -1,5 +1,5 @@
 <footer class="bg-white">
-    <div class="max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
+    <div class="md:w-4/5 max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
                 <div class="flex justify-start text-blue-500 sm:justify-start">
