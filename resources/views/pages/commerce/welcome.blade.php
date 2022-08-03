@@ -15,8 +15,8 @@
 
         <div class="container mx-auto px-3 lg:px-12 sm:flex-row relative pt-2 pb-8 sm:pt-8">
 
-            <div class="sm:block max-h-72  sm:w-2/3 lg:w-fit mx-auto rounded-md my-4 relative overflow-hidden">
-                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header.jpg') }}" class="h-fit sm:h-72 w-full m-auto object-contain bg-gray-100" />
+            <div class="h-fit sm:block max-h-72  sm:w-2/3 lg:w-fit mx-auto rounded-md my-4 relative overflow-hidden">
+                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
             </div>
 
             <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative sm:mt-16 ">
@@ -44,7 +44,7 @@
                 <div class="flex w-full md:justify-start justify-center items-end">
                     <div class="relative mr-4 lg:w-full xl:w-1/2 w-3/4 mt-8">
 
-                        <a href="{{route('products.index')}}" type="submit" id="donate" class="text-center whitespace-nowrap rounded border-1 border-transparent bg-black text-sm p-2.5 py-3 text-white w-full block font-semibold  gray-300 hover:bg-gray-800 duration-200 transition">
+                        <a href="{{route('products.index')}}" class="text-center rounded border-1 border-transparent bg-black text-sm p-2.5 py-3 text-white w-full  font-semibold  gray-300 ">
                             <i class="fa-solid fa-store mr-1"></i>
                             <span>Išpūsti katalogą</span>
                         </a>
