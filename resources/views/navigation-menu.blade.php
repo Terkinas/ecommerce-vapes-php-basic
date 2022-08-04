@@ -1,4 +1,8 @@
 <div class="z-101">
+    <div class="w-full bg-gray-100 py-2 text-center">
+        <h2 class="text-red-500 font-bold text-xs md:text-base">Warning: The products contain Nicotine. Nicotine is an addictive chemical.</h2>
+        <h3 class="text-gray-400  text-xs md:text-base">Free Shipping on any order over 50 EUR</h3>
+    </div>
 
 
 
@@ -54,7 +58,7 @@
                         </a>
                         @endif
                         @endauth
-                        <a class="text-gray-500 px-3 py-2 inline-block ml-1 rounded-md hover:text-gray-800" href="{{ route('products.index') }}">
+                        <a class="text-gray-400 px-3 py-2 inline-block ml-1 rounded-md hover:text-gray-800" href="{{ route('products.index') }}">
                             <i class="fa fa-search"></i>
                         </a>
                         @if(null !== session()->get('cart') && count(session()->get('cart')->items) > 0)

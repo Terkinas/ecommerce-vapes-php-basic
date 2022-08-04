@@ -35,31 +35,34 @@
     </div>
 </div>
 
+<div class="h-fit sm:block max-h-32  sm:w-4/5 lg:w-fit mx-auto bg-black my-1 mb-8 relative overflow-hidden">
+
+    <img src="{{ asset('images/commerce/catalog/heets-slate-header.jpg') }}" class="h-full sm:h-72 opacity-50 w-full m-auto object-contain bg-gray-100" />
+    <div>
+        <h4 class="text-2xl font-bold text-white absolute w-full text-center h-full flex justify-center top-1/3 uppercase">Disposable vapes</h4>
+        <h4 class="text-xs font-bold text-white absolute w-full text-center h-full flex justify-center top-2/3 uppercase">Categories <span><i class="fa-solid fa-caret-down text-white mx-1"></i></span></h4>
+    </div>
+</div>
+
 
 <nav class="flex bg-white px-6" aria-label="Breadcrumb">
-    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3">
         <li class="inline-flex items-center">
-            <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                </svg>
-                Shop
+            <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+
+                Home
             </a>
         </li>
         <li>
             <div class="flex items-center">
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Products</a>
+                <h5 class="text-gray-500 px-2">/</h5>
+                <a href="#" class="ml-1 text-sm font-semibold text-gray-500 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Products</a>
             </div>
         </li>
         <li aria-current="page">
             <div class="flex items-center">
-                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">All</span>
+                <h5 class="text-gray-500 px-2">/</h5>
+                <span class="ml-1 text-sm font-semibold text-gray-300 md:ml-2 dark:text-gray-400">All</span>
             </div>
         </li>
     </ol>
@@ -73,7 +76,7 @@
         @csrf
         <div class="flex ">
 
-            <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-0 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-gray-800 border border-gray-800 rounded-l  focus:ring-4 focus:outline-none focus:ring-gray-100  " type="button">All <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-0 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-green-600 border border-green-600 rounded-l  focus:ring-4 focus:outline-none focus:ring-gray-100  " type="button">All <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg></button>
             <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(338px, 690px);">
@@ -94,7 +97,7 @@
             </div>
             <div class="relative w-full">
                 <input value="{{ old('keyword') }}" name="keyword" type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded border-l-gray-50 border-l-1 border border-gray-300 " placeholder="Find what you love" required="">
-                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-gray-800 rounded border border-gray-700 hover:border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-green-600 rounded border border-green-600 hover:border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg></button>
             </div>
@@ -106,9 +109,9 @@
 <section class="py-4">
     <div class="container max-w-screen-xl mx-auto px-4">
 
-        <div class="flex flex-col md:flex-row -mx-4">
-            <aside class="md:w-1/3 lg:w-1/4 px-4">
-                <!-- filter wrap -->
+        <div class="flex flex-col md:flex-row -mx-4 mx-auto w-full ">
+            <!-- <aside class="md:w-2/3 lg:w-1/4 px-4 mx-auto mt-24 ml-4">
+           
 
                 <a class=" scale-90 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3 md:hidden mb-5  w-full text-center px-4 py-2 inline-block text-lg text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
                     Filter by
@@ -118,12 +121,10 @@
                     <h3 class="font-semibold mb-2">Category</h3>
 
                     <ul class="text-gray-500 space-y-1">
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Electronics </a></li>
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Watches </a></li>
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Cinema </a></li>
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Clothes </a></li>
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Home items </a></li>
-                        <li><a class="hover:text-blue-600 hover:underline" href="#">Smartwatches </a></li>
+                        <li><a class="hover:text-blue-600 hover:underline" href="#">Disposable vapes </a></li>
+                        <li><a class="hover:text-blue-600 hover:underline" href="#">Liquids </a></li>
+                        <li><a class="hover:text-blue-600 hover:underline" href="#">Coils </a></li>
+                        <li><a class="hover:text-blue-600 hover:underline" href="#">Accessories </a></li>
                     </ul>
 
                     <hr class="my-4">
@@ -193,16 +194,21 @@
                     </ul>
 
                 </div>
-                <!-- filter wrap -->
-            </aside> <!-- col.// -->
-            <main class="md:w-2/3 lg:w-3/4 px-3">
+                
+            </aside>  -->
+            <main class="md:w-2/3 lg:w-3/4 px-3 md:px-0">
                 <div>
 
                     <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
 
                 </div>
 
-                <div class="bg-white px-4 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
+                <div class="w-full px-4 mx-auto px-3 md:px-8 flex justify-between">
+                    <h5 class="text-gray-400 mx-2">Disposable vapes</h5>
+                    <i class="fa-solid fa-sort mx-2"></i>
+                </div>
+
+                <div class="bg-white px-4 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
 
                     @if (isset($results))
@@ -217,10 +223,10 @@
 
                         @foreach ($products as $product)<div class="">
 
-                            <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col ">
+                            <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
 
                                 <div class="bg-neutral-100 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
-                                    <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
+                                    <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3  scale-95 hover:scale-100 transition duration-500" alt="" />
                                 </div>
 
                                 <div class="mt-2">
