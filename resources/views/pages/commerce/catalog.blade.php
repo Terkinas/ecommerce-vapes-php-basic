@@ -109,7 +109,7 @@
 <section class="py-4">
     <div class="container max-w-screen-xl mx-auto px-4">
 
-        <div class="flex flex-col md:flex-row -mx-4 mx-auto w-full ">
+        <div class="flex flex-col md:flex-row  w-full ">
             <!-- <aside class="md:w-2/3 lg:w-1/4 px-4 mx-auto mt-24 ml-4">
            
 
@@ -196,11 +196,9 @@
                 </div>
                 
             </aside>  -->
-            <main class="md:w-2/3 lg:w-3/4 px-3 md:px-0">
+            <main class="w-full md:w-2/3 lg:w-3/4 px-3 md:px-0">
                 <div>
-
                     <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
-
                 </div>
 
                 <div class="w-full px-4 mx-auto px-3 md:px-8 flex justify-between">
@@ -208,7 +206,7 @@
                     <i class="fa-solid fa-sort mx-2"></i>
                 </div>
 
-                <div class="bg-white px-4 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
+                <div class="bg-white px-2 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
 
                     @if (isset($results))
@@ -218,7 +216,7 @@
                     @if(count($products) > 0)
 
 
-                    <div class="grid gap-8 grid-cols-2 sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8">
+                    <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8">
 
 
                         @foreach ($products as $product)<div class="">
