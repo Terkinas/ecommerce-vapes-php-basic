@@ -196,7 +196,7 @@
                 </div>
                 
             </aside>  -->
-            <main class="w-full md:w-2/3 lg:w-3/4 px-3 md:px-0">
+            <main class="w-full md:w-2/3 lg:w-3/4 px-1 md:px-0">
                 <div>
                     <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
                 </div>
@@ -206,7 +206,7 @@
                     <i class="fa-solid fa-sort mx-2"></i>
                 </div>
 
-                <div class="bg-white px-2 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
+                <div class="bg-white px-1 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
 
                     @if (isset($results))

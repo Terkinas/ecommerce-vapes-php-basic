@@ -62,7 +62,7 @@
 
                     </h2>
 
-                    <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-2 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
+                    <div class="grid gap-4 mx-0 grid-cols-2 align-around sm:grid-cols-2 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
             md:w-4/5 ">
 
 
