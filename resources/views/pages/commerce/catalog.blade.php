@@ -201,10 +201,18 @@
                     <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
                 </div>
 
-                <div class="w-full px-4 mx-auto px-3 md:px-8 flex justify-between">
-                    <h5 class="text-gray-400 mx-2">Disposable vapes</h5>
-                    <i class="fa-solid fa-sort mx-2"></i>
-                </div>
+
+                <!-- <div class="mx-2 md:w-3/5 md:max-auto">
+                    <label for="default" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Default select</label>
+                    <select id="default" class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>Choose a country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </div> -->
+
 
                 <div class="bg-white px-1 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
@@ -214,7 +222,10 @@
                     @endif
 
                     @if(count($products) > 0)
-
+                    <div class="w-full mx-auto my-2 md:px-0 flex justify-between">
+                        <h5 class="text-gray-400 mx-2">Disposable vapes</h5>
+                        <i class="fa-solid fa-sort mx-2"></i>
+                    </div>
 
                     <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8">
 

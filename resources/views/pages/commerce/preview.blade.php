@@ -74,26 +74,101 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="flex">
-                    <span class="title-font font-medium text-2xl text-gray-900"> €{{number_format($product[0]->price / 100,2)}}</span>
-                    <form class="inline flex ml-auto" action="{{ route('cart.store', ['id' => $product[0]->id]) }}" method="post">
-                        @csrf
-                        <button class="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">Add to cart</button>
+                <div class="flex-col">
+                    <form action="{{ route('cart.store', ['id' => $product[0]->id]) }}" method="post">
+                        <div class="custom-number-input my-4 px-4 w-full">
+                            <label>Choose quantity</label>
+                            <div class="flex flex-row h-10 w-full my-4 rounded-lg relative bg-transparent mt-1">
+                                <button type="button" data-action="decrement" class=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                    <span class="m-auto text-2xl font-thin">−</span>
+                                </button>
+                                <input type="number" class="outline-none border-transparent focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="choosedQty" value="1"></input>
+                                <button type="button" data-action="increment" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                    <span class="m-auto text-2xl font-thin">+</span>
+                                </button>
+                            </div>
+
+                            <style>
+                                input[type='number']::-webkit-inner-spin-button,
+                                input[type='number']::-webkit-outer-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+
+                                .custom-number-input input:focus {
+                                    outline: none !important;
+                                }
+
+                                .custom-number-input button:focus {
+                                    outline: none !important;
+                                }
+                            </style>
+
+                            <script>
+                                function decrement(e) {
+                                    const btn = e.target.parentNode.parentElement.querySelector(
+                                        'button[data-action="decrement"]'
+                                    );
+                                    const target = btn.nextElementSibling;
+                                    let value = Number(target.value);
+                                    if (value <= 1) {
+
+                                    } else {
+                                        value--;
+                                        target.value = value;
+                                    }
+
+                                }
+
+                                function increment(e) {
+                                    const btn = e.target.parentNode.parentElement.querySelector(
+                                        'button[data-action="decrement"]'
+                                    );
+                                    const target = btn.nextElementSibling;
+                                    let value = Number(target.value);
+                                    value++;
+                                    target.value = value;
+                                }
+
+                                const decrementButtons = document.querySelectorAll(
+                                    `button[data-action="decrement"]`
+                                );
+
+                                const incrementButtons = document.querySelectorAll(
+                                    `button[data-action="increment"]`
+                                );
+
+                                decrementButtons.forEach(btn => {
+                                    btn.addEventListener("click", decrement);
+                                });
+
+                                incrementButtons.forEach(btn => {
+                                    btn.addEventListener("click", increment);
+                                });
+                            </script>
+                        </div>
+                        <div class="flex pt-2 mx-4">
+                            <span class="title-font font-medium text-2xl text-gray-900"> €{{number_format($product[0]->price / 100,2)}}</span>
+                            <div class="inline flex ml-auto">
+
+                                @csrf
+                                <button class="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">Add to cart</button>
+                            </div>
+                            <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                                </svg>
+                            </button>
+                            @if(isset(auth()->user()->admin))
+                            <a href="{{ route('products.edit', ['id' => $product[0]->id]) }}" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            @endif
+                        </div>
                     </form>
-                    <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                        </svg>
-                    </button>
-                    @if(isset(auth()->user()->admin))
-                    <a href="{{ route('products.edit', ['id' => $product[0]->id]) }}" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                    @endif
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <!-- 

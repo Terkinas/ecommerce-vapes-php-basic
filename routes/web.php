@@ -35,6 +35,7 @@ Route::get('/', [ProductsController::class, 'welcome'])->name('welcome');
 
 Route::prefix('info')->group(function () {
     Route::get('/purchases', [RulesController::class, 'purchases'])->name('info.purchases');
+    Route::post('/ageconfirm', [RulesController::class, 'ageconfirm'])->name('info.ageconfirm');
 });
 
 // Route::prefix('paypal')->group(function () {
@@ -83,6 +84,7 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('cart')->group(function () {
     Route::post('/add/{id}', [CartController::class, 'store'])->name('cart.store');
+    Route::post('/update/{id}', [CartController::class, 'edit'])->name('cart.update');
     Route::post('/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
     Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });

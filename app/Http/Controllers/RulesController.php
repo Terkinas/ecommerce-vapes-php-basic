@@ -12,4 +12,10 @@ class RulesController extends Controller
     {
         return view('pages.documentation.shopping-rules');
     }
+
+    public function ageconfirm(Request $request)
+    {
+        $request->session()->put('ageconfirmation', true);
+        return redirect()->route('welcome');
+    }
 }

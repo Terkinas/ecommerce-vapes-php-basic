@@ -42,7 +42,16 @@
     <x-jet-banner />
 
     <div class="min-h-screen">
-        @livewire('navigation-menu')
+
+
+
+
+
+
+        @livewire('age-confirmation')
+
+
+
 
         <!-- Page Heading -->
         @if (isset($header))

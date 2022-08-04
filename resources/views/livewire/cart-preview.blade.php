@@ -10,6 +10,13 @@
       From: "opacity-100"
       To: "opacity-0"
   -->
+
+    <script>
+        var opened = sessionStorage.getItem('opened');
+        if (opened == 'true') {
+            document.querySelector('.shoppingCart').classList.remove('hidden');
+        }
+    </script>
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
     <div class="fixed inset-0 overflow-hidden">
@@ -64,17 +71,89 @@
                                                     <p class="mt-1 text-sm text-gray-500">{{ $item['item']['color'] }}</p>
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-400"> {{ $item['qty'] }} Qty.</p>
+                                                    <div class="flex flex-1 items-end justify-between">
+                                                        <!-- component -->
+                                                        <div class="custom-number-input h-10 w-32">
+                                                            <form action="{{ route('cart.update', ['id' => $item['item']->id]) }}" method="post">
+                                                                @csrf
+                                                                <div class="flex flex-row h-8 w-full rounded-lg relative bg-transparent mt-1">
+                                                                    <button data-action="decrement" class=" bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                                                        <span class="m-auto text-2xl font-thin">−</span>
+                                                                    </button>
+                                                                    <input type="number" class="outline-none border-transparent focus:outline-none text-center w-full bg-gray-50 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="choosedQty" value="{{ $item['qty'] }}"></input>
+                                                                    <button data-action="increment" class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                                                        <span class="m-auto text-2xl font-thin">+</span>
+                                                                    </button>
+                                                                    <!-- <p class="text-gray-400"> {{ $item['qty'] }} Qty.</p> -->
+                                                                </div>
+                                                            </form>
 
-                                                    <div class="flex">
-                                                        <form action="{{ route('cart.remove', ['id' => $item['item']->id]) }}" method="post">
-                                                            @csrf
-                                                            <button type="submit" class="font-medium text-red-600 hover:text-red-500">Remove</button>
-                                                        </form>
 
+                                                            <style>
+                                                                input[type='number']::-webkit-inner-spin-button,
+                                                                input[type='number']::-webkit-outer-spin-button {
+                                                                    -webkit-appearance: none;
+                                                                    margin: 0;
+                                                                }
+
+                                                                .custom-number-input input:focus {
+                                                                    outline: none !important;
+                                                                }
+
+                                                                .custom-number-input button:focus {
+                                                                    outline: none !important;
+                                                                }
+                                                            </style>
+
+                                                            <script>
+                                                                function decrement(e) {
+                                                                    const btn = e.target.parentNode.parentElement.querySelector(
+                                                                        'button[data-action="decrement"]'
+                                                                    );
+                                                                    const target = btn.nextElementSibling;
+                                                                    let value = Number(target.value);
+                                                                    value--;
+                                                                    target.value = value;
+                                                                }
+
+                                                                function increment(e) {
+                                                                    const btn = e.target.parentNode.parentElement.querySelector(
+                                                                        'button[data-action="decrement"]'
+                                                                    );
+                                                                    const target = btn.nextElementSibling;
+                                                                    let value = Number(target.value);
+                                                                    value++;
+                                                                    target.value = value;
+                                                                }
+
+                                                                const decrementButtons = document.querySelectorAll(
+                                                                    `button[data-action="decrement"]`
+                                                                );
+
+                                                                const incrementButtons = document.querySelectorAll(
+                                                                    `button[data-action="increment"]`
+                                                                );
+
+                                                                decrementButtons.forEach(btn => {
+                                                                    btn.addEventListener("click", decrement);
+                                                                });
+
+                                                                incrementButtons.forEach(btn => {
+                                                                    btn.addEventListener("click", increment);
+                                                                });
+                                                            </script>
+                                                        </div>
+
+
+                                                        <div class="flex">
+                                                            <form action="{{ route('cart.remove', ['id' => $item['item']->id]) }}" method="post">
+                                                                @csrf
+                                                                <button type="submit" class="font-medium text-red-600 hover:text-red-500">Remove</button>
+                                                            </form>
+
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                         </li>
                                         @endforeach
 
@@ -105,11 +184,11 @@
                             </div>
                             <p class="mt-0.5 text-sm text-gray-500">Shipping and VAT calculated in the checkout.</p>
                             <div class="mt-6">
-                                <a href="{{ route('cart.checkout') }}" class=" flex items-center justify-center rounded-md  bg-gradient-to-b from-blue-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">Proceed to checkout</a>
+                                <a href="{{ route('cart.checkout') }}" class=" flex items-center justify-center rounded-md  bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-500">Proceed to checkout</a>
                             </div>
                             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                                 <p>
-                                    or <a href="{{ route('products.index') }}" class="font-medium text-blue-600 hover:text-red-500">Continue shopping<span aria-hidden="true"> &rarr;</span></a>
+                                    or <a href="{{ route('products.index') }}" class="font-medium text-green-600 hover:text-red-500">Continue shopping<span aria-hidden="true"> &rarr;</span></a>
                                 </p>
                             </div>
                         </div>
@@ -124,13 +203,31 @@
 <script>
     closeCartButton.addEventListener('click', () => {
         document.querySelector('.shoppingCart').classList.toggle('hidden');
+
+        if (opened == 'true') {
+            sessionStorage.removeItem('opened');
+        } else {
+            sessionStorage.setItem('opened', 'true');
+        }
     })
 
     openCartButton.addEventListener('click', () => {
         document.querySelector('.shoppingCart').classList.toggle('hidden');
+
+        if (opened == 'true') {
+            sessionStorage.removeItem('opened');
+        } else {
+            sessionStorage.setItem('opened', 'true');
+        }
     })
 
     openCartButtonMobile.addEventListener('click', () => {
         document.querySelector('.shoppingCart').classList.toggle('hidden');
+
+        if (opened == 'true') {
+            sessionStorage.removeItem('opened');
+        } else {
+            sessionStorage.setItem('opened', 'true');
+        }
     })
 </script>

@@ -18,10 +18,28 @@ class CartController extends Controller
             $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
 
             $cart = new Cart($oldCart);
-            $cart->add($product, $product->id);
-            $request->session()->put('cart', $cart);
 
+            $cart->add($product, $product->id, $request->choosedQty);
+            $request->session()->put('cart', $cart);
+            // session()->forget('cart');
             return redirect()->route('products.index')->with('success', 'Product has been added successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('404')->with('error', $e);
+        }
+    }
+
+    public function edit(Request $request, $id)
+    {
+        try {
+            $product = Product::select('id', 'name', 'price', 'color', 'image_path')->where('id', $id)->firstOrFail();
+            $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
+
+            $cart = new Cart($oldCart);
+
+            $cart->update($product, $product->id, $request->choosedQty);
+            $request->session()->put('cart', $cart);
+            // session()->forget('cart');
+            return redirect()->route('products.index');
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }

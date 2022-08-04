@@ -52,7 +52,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
                     </div>
 
                     @if ($cart !== null) <div class="mt-8">
-                        <p class="text-2xl font-medium tracking-tight">€{{$totalPrice / 100}}</p>
+                        <p class="text-2xl font-medium tracking-tight">€{{number_format($totalPrice / 100,2)}}</p>
                         <p class="mt-1 text-sm text-gray-500">Products in the shopping cart:</p>
                     </div>
 
