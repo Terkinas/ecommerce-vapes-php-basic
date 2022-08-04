@@ -234,11 +234,11 @@
 
                             <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
 
-                                <div class="bg-{{$product->color}}-100 bg-opacity-75 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                                <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
                                     <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3  scale-95 hover:scale-100 transition duration-500" alt="" />
                                 </div>
 
-                                <div class="mt-2">
+                                <div class="mt-2 flex justify-between">
                                     <h5 class="font-semibold text-gray-500 text-sm">
                                         {{Str::limit($product->name , 42)}}
                                     </h5>
