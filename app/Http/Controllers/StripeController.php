@@ -6,6 +6,7 @@ use App\Cart;
 use App\Mail\MadePurchase;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Stripe\Stripe;
@@ -98,6 +99,10 @@ class StripeController extends Controller
                     'quantity' => $item['qty'],
                     'price' => $item['item']->price
                 ]);
+
+                $productsold = Product::find($item['item']->id);
+                $productsold->quantity_sold += $item['qty'];
+                $productsold->save();
             }
 
             // dd($order, $request->session()->get('cart'));

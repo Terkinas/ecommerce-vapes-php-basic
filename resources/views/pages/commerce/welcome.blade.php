@@ -188,7 +188,7 @@
 
                     <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
 
-                        <div class="bg-neutral-100 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                        <div class="bg-{{$product->color}}-100 bg-opacity-75 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
                             @if ($key == 6)
                             <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
                             @else

@@ -4,7 +4,7 @@
 
     <div id="popup-modal" tabindex="-1" class="bg-gray-900 bg-opacity-75 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal h-full justify-center items-center flex" aria-modal="true" role="dialog">
         <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-            <form action="{{ route('info.ageconfirm') }}" method="post" class="relative bg-white rounded-lg shadow dark:bg-gray-700 top-1/3">
+            <form action="{{ route('info.ageconfirm') }}" method="post" class="relative bg-white rounded-lg shadow dark:bg-gray-700 top-1/4 md:top-1/3">
                 @csrf
                 <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="popup-modal">
 

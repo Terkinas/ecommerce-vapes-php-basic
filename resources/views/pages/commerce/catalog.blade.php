@@ -107,7 +107,7 @@
 
 <!-- SECTION-CONTENT -->
 <section class="py-4 ">
-    <div class="container max-w-screen-xl mx-auto px-4 ">
+    <div class="container max-w-screen-xl mx-auto px-3 ">
 
         <div class="flex flex-col md:flex-row  w-full md:mx-auto">
             <!-- <aside class="md:w-2/3 lg:w-1/4 px-4 mx-auto mt-24 ml-4">
@@ -214,7 +214,7 @@
                 </div> -->
 
 
-                <div class="bg-white px-1 md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
+                <div class="bg-white  md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
 
                     @if (isset($results))
@@ -234,7 +234,7 @@
 
                             <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
 
-                                <div class="bg-neutral-100 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                                <div class="bg-{{$product->color}}-100 bg-opacity-75 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
                                     <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3  scale-95 hover:scale-100 transition duration-500" alt="" />
                                 </div>
 
