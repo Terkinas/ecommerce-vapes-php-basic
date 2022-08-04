@@ -18,7 +18,7 @@ class ProductsController extends Controller
     public function welcome()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(7)->onEachSide(2);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('created_at', 'desc')->where('active', 1)->paginate(7)->onEachSide(2);
             return view('pages.commerce.welcome', compact('products'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
@@ -28,7 +28,7 @@ class ProductsController extends Controller
     public function index()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(7)->onEachSide(2);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(6)->onEachSide(2);
             return view('pages.commerce.catalog', compact('products'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);

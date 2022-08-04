@@ -13,11 +13,56 @@
 
         </div>
 
-        <div class="container mx-auto  lg:px-12 sm:flex-row relative pt-1 pb-8 sm:pt-8">
+        <div class="container mx-auto  lg:px-12 sm:flex-row relative pt-1 pb-8 sm:pt-8 md:w-4/5">
 
-            <div class="h-fit sm:block max-h-72  sm:w-4/5 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
-                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
+
+            <div id="controls-carousel" class="relative z-1" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                    <!-- Item 1 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-1" data-carousel-item="">
+                        <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-1" data-carousel-item="active">
+                        <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-1" data-carousel-item="">
+                        <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out absolute inset-0 transition-all transform" data-carousel-item="">
+                        <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out absolute inset-0 transition-all transform" data-carousel-item="">
+                        <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
             </div>
+
+
+            <!-- <div class="h-fit sm:block max-h-72  sm:w-4/5 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
+                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain bg-gray-100" />
+            </div> -->
 
 
 
@@ -50,7 +95,7 @@
 
                     @if(count($products) > 0)
 
-                    <h2 class="mx-4 max-w-lg mb-3 font-sans text-xs font-bold tracking-tight text-gray-900 sm:text-sm sm:leading-none
+                    <h2 class="mx-4 max-w-lg mb-3 font-sans text-xs font-bold tracking-tight sm:text-sm sm:leading-none
             md:w-4/5 md:text-center md:mx-auto text-center uppercase text-blue-500 scale-75">
                         Hurry up to buy <br class="hidden md:block" />
 
@@ -194,11 +239,11 @@
                         </div>
 
                         <div class="mt-2 flex justify-between">
-                            <h5 class="font-semibold text-gray-500 text-sm">
+                            <h5 class="font-semibold text-gray-500 text-sm ">
                                 {{Str::limit($product->name , 42)}}
                             </h5>
 
-                            <p class=" text-xs text-gray-700">
+                            <p class=" text-xs text-gray-700 ">
                                 €{{number_format($product->price / 100,2)}}
                             </p>
                         </div>

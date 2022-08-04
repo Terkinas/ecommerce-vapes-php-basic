@@ -45,7 +45,7 @@
 </div>
 
 
-<nav class="flex bg-white px-6" aria-label="Breadcrumb">
+<nav class="flex bg-white px-6  md:w-3/4 md:mx-auto" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3">
         <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
@@ -71,7 +71,7 @@
 
 
 
-<div class="w-full flex justify-center bg-white">
+<div class="w-full flex justify-center bg-white ">
     <form action="{{ route('products.search') }}" method="GET" class="scale-90 p-3 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
         @csrf
         <div class="flex ">
@@ -106,10 +106,10 @@
 </div>
 
 <!-- SECTION-CONTENT -->
-<section class="py-4">
-    <div class="container max-w-screen-xl mx-auto px-4">
+<section class="py-4 ">
+    <div class="container max-w-screen-xl mx-auto px-4 ">
 
-        <div class="flex flex-col md:flex-row  w-full ">
+        <div class="flex flex-col md:flex-row  w-full md:mx-auto">
             <!-- <aside class="md:w-2/3 lg:w-1/4 px-4 mx-auto mt-24 ml-4">
            
 
@@ -196,7 +196,7 @@
                 </div>
                 
             </aside>  -->
-            <main class="w-full md:w-2/3 lg:w-3/4 px-1 md:px-0">
+            <main class="w-full md:w-2/3 lg:w-3/4 px-1 md:px-0 md:w-3/4 md:mx-auto">
                 <div>
                     <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
                 </div>
@@ -259,7 +259,7 @@
 
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="bg-white pt-16">
+<div class="bg-white pt-16 md:w-4/5 mx-auto">
     <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl px-4 lg:px-10">Populiariausia prekė</h2>
     <div class="max-w-2xl mx-auto pb-12 pt-8 sm:pt-3  px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 sm:pb-12 lg:max-w-7xl lg:px-8 lg:grid-cols-2 lg:mt-8">
         <div class="grid sm:hidden grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
