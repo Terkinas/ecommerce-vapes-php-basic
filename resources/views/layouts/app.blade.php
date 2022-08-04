@@ -44,7 +44,7 @@
     <div class="min-h-screen">
 
 
-
+        @livewire('navigation-menu')
 
 
 
