@@ -199,122 +199,7 @@
 <section>
 
     <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 md:w-4/5">
-        <form class="w-full max-w-lg my-12 mx-auto">
-            <p class="text-gray-600 font-bold mb-2 text-center uppercase tracking-wide text-xs">Choose a rating</p>
-            <div class="flex flex-wrap -mx-3 mx-auto mb-6">
 
-                <div class="mx-auto">
-                    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-                    <span class="star-rating mx-2 mb-6">
-                        <input type="radio" name="rating" value="1"><i></i>
-                        <input type="radio" name="rating" value="2"><i></i>
-                        <input type="radio" name="rating" value="3"><i></i>
-                        <input type="radio" name="rating" value="4"><i></i>
-                        <input type="radio" name="rating" value="5"><i></i>
-                    </span>
-
-                    <style type='text/css'>
-                        .star-rating {
-                            font-size: 0;
-                            white-space: nowrap;
-                            display: inline-block;
-                            width: 150px;
-                            height: 30px;
-                            overflow: hidden;
-                            position: relative;
-                            /* background: url('https://thumbs.dreamstime.com/b/beautiful-golden-star-isolated-png-high-quality-illustration-beautiful-shining-gold-star-isolated-transparent-background-105019481.jpg'); */
-                            background: url('/images/commerce/reviews/stars/yellow.png');
-                            background-size: contain;
-
-                        }
-
-                        .star-rating i {
-                            opacity: 0;
-                            position: absolute;
-                            left: 0;
-                            top: 0;
-                            height: 100%;
-                            width: 20%;
-                            z-index: 1;
-                            /* background: url('https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-star-vector-icon-png-image_696411.jpg'); */
-                            background: url('/images/commerce/reviews/stars/yellow-filled.png');
-                            /* background: url('images/commerce/reviews/stars/red.png'); */
-                            background-size: contain;
-                        }
-
-                        .star-rating input {
-                            -moz-appearance: none;
-                            -webkit-appearance: none;
-                            opacity: 0;
-                            display: inline-block;
-                            width: 20%;
-                            height: 100%;
-                            margin: 0;
-                            padding: 0;
-                            z-index: 2;
-                            position: relative;
-                        }
-
-                        .star-rating input:hover+i,
-                        .star-rating input:checked+i {
-                            opacity: 1;
-                        }
-
-                        .star-rating i~i {
-                            width: 40%;
-                        }
-
-                        .star-rating i~i~i {
-                            width: 60%;
-                        }
-
-                        .star-rating i~i~i~i {
-                            width: 80%;
-                        }
-
-                        .star-rating i~i~i~i~i {
-                            width: 100%;
-                        }
-                    </style>
-                    <script type='text/javascript'>
-                        //<![CDATA[
-                        $(window).load(function() {
-                            $(':radio').change(
-                                function() {
-                                    // console.log(this.value);
-                                    $('.choice').text(this.value + ' stars');
-                                }
-                            )
-                        }); //]]>
-                    </script>
-                </div>
-                <div class="w-full px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                        title
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nick" type="text">
-
-                </div>
-            </div>
-
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                        message
-                    </label>
-                    <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24 resize-none" id="message"></textarea>
-                    <p class="text-gray-600 text-xs italic">Describe your opinion (optional)</p>
-                </div>
-            </div>
-            <div class="md:flex md:items-center">
-                <div class="md:w-1/3">
-                    <button class="shadow bg-green-400 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                        Submit for review
-                    </button>
-                </div>
-                <div class="md:w-2/3"></div>
-            </div>
-        </form>
         <h2 class="text-xl font-bold sm:text-2xl">Customer Reviews</h2>
 
         <!-- <form action="{{ route('reviews.store', ['id' => $product[0]->id]) }}" method="post">
@@ -474,6 +359,122 @@
                 </footer>
             </blockquote>
         </div>
+        <form class="w-full max-w-lg my-12 mx-auto">
+            <p class="text-gray-600 font-bold mb-2 text-center uppercase tracking-wide text-xs">Choose a rating</p>
+            <div class="flex flex-wrap -mx-3 mx-auto mb-6">
+
+                <div class="mx-auto">
+                    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+                    <span class="star-rating mx-2 mb-6">
+                        <input type="radio" name="rating" value="1"><i></i>
+                        <input type="radio" name="rating" value="2"><i></i>
+                        <input type="radio" name="rating" value="3"><i></i>
+                        <input type="radio" name="rating" value="4"><i></i>
+                        <input type="radio" name="rating" value="5"><i></i>
+                    </span>
+
+                    <style type='text/css'>
+                        .star-rating {
+                            font-size: 0;
+                            white-space: nowrap;
+                            display: inline-block;
+                            width: 125px;
+                            height: 25px;
+                            overflow: hidden;
+                            position: relative;
+                            /* background: url('https://thumbs.dreamstime.com/b/beautiful-golden-star-isolated-png-high-quality-illustration-beautiful-shining-gold-star-isolated-transparent-background-105019481.jpg'); */
+                            background: url('/images/commerce/reviews/stars/yellow.png');
+                            background-size: contain;
+
+                        }
+
+                        .star-rating i {
+                            opacity: 0;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            height: 100%;
+                            width: 20%;
+                            z-index: 1;
+                            /* background: url('https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-star-vector-icon-png-image_696411.jpg'); */
+                            background: url('/images/commerce/reviews/stars/yellow-filled.png');
+                            /* background: url('images/commerce/reviews/stars/red.png'); */
+                            background-size: contain;
+                        }
+
+                        .star-rating input {
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                            opacity: 0;
+                            display: inline-block;
+                            width: 20%;
+                            height: 100%;
+                            margin: 0;
+                            padding: 0;
+                            z-index: 2;
+                            position: relative;
+                        }
+
+                        .star-rating input:hover+i,
+                        .star-rating input:checked+i {
+                            opacity: 1;
+                        }
+
+                        .star-rating i~i {
+                            width: 40%;
+                        }
+
+                        .star-rating i~i~i {
+                            width: 60%;
+                        }
+
+                        .star-rating i~i~i~i {
+                            width: 80%;
+                        }
+
+                        .star-rating i~i~i~i~i {
+                            width: 100%;
+                        }
+                    </style>
+                    <script type='text/javascript'>
+                        //<![CDATA[
+                        $(window).load(function() {
+                            $(':radio').change(
+                                function() {
+                                    // console.log(this.value);
+                                    $('.choice').text(this.value + ' stars');
+                                }
+                            )
+                        }); //]]>
+                    </script>
+                </div>
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        title
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nick" type="text">
+
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        message
+                    </label>
+                    <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24 resize-none" id="message"></textarea>
+                    <p class="text-gray-600 text-xs italic">Describe your opinion (optional)</p>
+                </div>
+            </div>
+            <div class="flex md:items-center justify-center ">
+                <div class="md:w-1/3">
+                    <button class="shadow bg-green-400 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded " type="button">
+                        Submit for review
+                    </button>
+                </div>
+                <div class="md:w-2/3"></div>
+            </div>
+        </form>
     </div>
 </section>
 
