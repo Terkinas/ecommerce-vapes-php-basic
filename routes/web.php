@@ -36,6 +36,7 @@ Route::get('/', [ProductsController::class, 'welcome'])->name('welcome');
 Route::prefix('info')->group(function () {
     Route::get('/purchases', [RulesController::class, 'purchases'])->name('info.purchases');
     Route::post('/ageconfirm', [RulesController::class, 'ageconfirm'])->name('info.ageconfirm');
+    Route::post('/cookieagreement', [RulesController::class, 'cookieagreement'])->name('info.cookieagreement');
 });
 
 // Route::prefix('paypal')->group(function () {
