@@ -189,11 +189,11 @@
                             </div>
                             <p class="mt-0.5 text-sm text-gray-500">Shipping and VAT calculated in the checkout.</p>
                             <div class="mt-6">
-                                <a href="{{ route('cart.checkout') }}" class=" flex items-center justify-center rounded-md  bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-500">Proceed to checkout</a>
+                                <a id="proceedToCheckout" href="{{ route('cart.checkout') }}" class="shadow bg-green-400 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded flex items-center justify-center px-6 py-3">Proceed to checkout</a>
                             </div>
                             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                                 <p>
-                                    or <a href="{{ route('products.index') }}" class="font-medium text-green-600 hover:text-red-500">Continue shopping<span aria-hidden="true"> &rarr;</span></a>
+                                    or <a href="{{ route('products.index') }}" class="font-medium text-green-400 hover:text-red-500">Continue shopping<span aria-hidden="true"> &rarr;</span></a>
                                 </p>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
 
 
 <script>
-    closeCartButton.addEventListener('click', () => {
+    proceedToCheckout.addEventListener('click', () => {
         document.querySelector('.shoppingCart').classList.toggle('hidden');
 
         if (opened == 'true') {
@@ -214,16 +214,21 @@
         } else {
             sessionStorage.setItem('opened', 'true');
         }
+    });
+    closeCartButton.addEventListener('click', () => {
+        document.querySelector('.shoppingCart').classList.toggle('hidden');
+
+
+        sessionStorage.removeItem('opened');
+
     })
 
     openCartButton.addEventListener('click', () => {
         document.querySelector('.shoppingCart').classList.toggle('hidden');
 
-        if (opened == 'true') {
-            sessionStorage.removeItem('opened');
-        } else {
-            sessionStorage.setItem('opened', 'true');
-        }
+
+        sessionStorage.setItem('opened', 'true');
+
     })
 
     openCartButtonMobile.addEventListener('click', () => {
