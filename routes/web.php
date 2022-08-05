@@ -7,6 +7,7 @@ use App\Http\Controllers\HelpController;
 use App\Http\Controllers\LogisticsController;
 
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RulesController;
 use Illuminate\Support\Facades\Route;
 
@@ -89,6 +90,11 @@ Route::prefix('cart')->group(function () {
     Route::post('/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
     Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
+
+Route::prefix('reviews')->group(function () {
+    Route::post('/add/{id}', [ReviewController::class, 'store'])->name('reviews.store');
+});
+
 
 Route::middleware([
     'auth:sanctum',
