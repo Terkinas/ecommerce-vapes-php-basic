@@ -99,14 +99,14 @@ class ProductsController extends Controller
 
                 Product::create([
                     'name' => request('name'),
-                    'urltag' => request('urltag'),
+                    'urltag' => str_replace(' ', '-', strtolower(request('urltag'))),
 
                     'subtitle' => request('subtitle'),
                     'description' => request('description'),
 
-                    'category' => request('category'),
+                    'category' => strtolower(request('category')),
 
-                    'color' => request('color'),
+                    'color' =>  strtolower(request('color')),
                     'size' => request('size'),
 
                     'stock_price' => request('stock_price'),

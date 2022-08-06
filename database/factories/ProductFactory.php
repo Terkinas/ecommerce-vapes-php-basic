@@ -16,10 +16,17 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        // $imageArray = [
+        //     '1656746019-Nike-Airforce-1-New-Collection-2019-png',
+        //     '1656748812-teatea-png',
+        //     '1656748297-Airforce-1-New-Collection-2021-png'
+        // ];
+
         $imageArray = [
-            '1656746019-Nike-Airforce-1-New-Collection-2019-png',
-            '1656748812-teatea-png',
-            '1656748297-Airforce-1-New-Collection-2021-png'
+            '20mgNerdBarWhitePeachRazz_2048x2048.jpg',
+            '20mgNerdBarSourAppleIce_2048x2048.jpg',
+            '20mgNerdBarPinkLemonade_2048x2048.jpg',
+            '20mgNerdBarPeachMango_2048x2048.jpg'
         ];
 
         $randomNames = [
@@ -39,16 +46,31 @@ class ProductFactory extends Factory
             "Shirley",
         ];
 
+        $randomColors = [
+            'red', 'orange', 'yellow', 'blue', 'green', 'indigo', 'pink',
+        ];
+
         return [
-            'name' => $randomNames[rand(0, count($randomNames) - 1)],
+            'name' => 'Disposable Vape ' . $randomNames[rand(0, count($randomNames) - 1)],
             'urltag' => $randomNames[rand(0, count($randomNames) - 1)],
-            'category' => 'random',
+            'category' => 'disposable vape',
             'subtitle' => 'lorem da lorem',
-            'description' => 'lorem da da',
-            'color' => 'red',
+            'description' => '<b>Specifications</b>:
+                <br />
+                20mg Nicotine Salt (2%) E-Liquid <br />
+                Capacity: 2.0ml <br />
+                Puffs: Up to 650 <br />
+                Nicotine Per Puff: 66mcg <br />
+                Battery: 550mAh (Built-in) <br />
+                Draw Activation <br />
+                Ready to Use <br />
+                No Refills & Charging <br />
+                Portable & Lightweight Design
+                TPD Complaint',
+            'color' => $randomColors[rand(0, count($randomColors) - 1)],
             'size' => rand(30, 44),
-            'price' => rand(50, 200),
-            'stock_price' => rand(30, 50),
+            'price' => rand(50, 2000),
+            'stock_price' => rand(120, 250),
             'subtag1' => 'new',
             'subtag2' => 'faschioned',
             'active' => 1,

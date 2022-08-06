@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_reviews', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('heading');
             $table->string('description')->default(null);
             $table->boolean('accepted')->default(false);
+            $table->integer('rating');
             $table->integer('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')
                 ->on('products')->onUpdate('cascade')->onDelete('set null');
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_reviews');
+        Schema::dropIfExists('reviews');
     }
 };

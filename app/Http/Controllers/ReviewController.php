@@ -14,16 +14,17 @@ class ReviewController extends Controller
             $validated = $request->validate([
                 'heading' => 'required|max:255',
                 'description' => 'max:1024',
-                'accepted',
-                'user_id',
-                'product_id',
+                'rating' => 'required',
             ]);
 
-
+            if ($request->rating > 5 || $request->rating < 1) {
+                return redirect()->route('404');
+            }
 
             Review::create([
                 'heading' => request('heading'),
                 'description' => request('description'),
+                'rating' => request('rating'),
 
                 'user_id' => User::select('id')->where('id', auth()->user()->id)->first()->id,
                 'product_id' => $id,
@@ -32,7 +33,7 @@ class ReviewController extends Controller
 
             ]);
 
-            return redirect()->route('products.index');
+            return redirect()->back()->with('success', 'Thanks for your feedback, it will appear once it is reviewed');
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }
