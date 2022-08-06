@@ -55,18 +55,12 @@ class ProductFactory extends Factory
             'urltag' => $randomNames[rand(0, count($randomNames) - 1)],
             'category' => 'disposable vape',
             'subtitle' => 'lorem da lorem',
-            'description' => '<b>Specifications</b>:
-                <br />
+            'description' => '<b>Specifications</b>:<br />
                 20mg Nicotine Salt (2%) E-Liquid <br />
                 Capacity: 2.0ml <br />
                 Puffs: Up to 650 <br />
                 Nicotine Per Puff: 66mcg <br />
-                Battery: 550mAh (Built-in) <br />
-                Draw Activation <br />
-                Ready to Use <br />
-                No Refills & Charging <br />
-                Portable & Lightweight Design
-                TPD Complaint',
+                Battery: 550mAh',
             'color' => $randomColors[rand(0, count($randomColors) - 1)],
             'size' => rand(30, 44),
             'price' => rand(50, 2000),
