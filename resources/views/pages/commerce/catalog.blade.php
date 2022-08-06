@@ -44,8 +44,7 @@
     </div>
 </div>
 
-
-<nav class="flex bg-gray-50 px-6  md:w-full md:mx-auto pt-8" aria-label="Breadcrumb">
+<nav class="flex bg-gray-50 px-3  md:w-full md:mx-auto pt-8" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3 md:px-8">
         <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
@@ -72,7 +71,7 @@
 
 
 <div class="w-full flex justify-center bg-gray-50 ">
-    <form action="{{ route('products.search') }}" method="GET" class="scale-90 md:scale-100 p-3 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
+    <form action="{{ route('products.search') }}" method="GET" class="scale-90 md:scale-100 p-0 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
         @csrf
         <div class="flex ">
 
@@ -198,7 +197,7 @@
             </aside>  -->
             <main class="w-full md:w-2/3 lg:w-3/4 px-1 md:px-0 md:w-3/4 md:mx-auto">
                 <div>
-                    <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-90">Choose a product from our catalog</h2>
+                    <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl my-4 scale-95 -mx-1">Choose a product from our catalog</h2>
                 </div>
 
 
