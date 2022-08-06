@@ -3,7 +3,7 @@
 @section('content')
 
 
-<main class=" bg-neutral-100 relative overflow-hidden">
+<main class=" bg-neutral-50 relative overflow-hidden">
     <div class="bg-white  flex relative items-center overflow-hidden mb-8">
 
 

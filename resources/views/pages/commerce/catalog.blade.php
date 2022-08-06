@@ -35,9 +35,9 @@
     </div>
 </div>
 
-<div class="h-fit sm:block max-h-32  sm:w-4/5 lg:w-fit mx-auto bg-black my-1 relative overflow-hidden ">
+<div class="h-fit sm:block max-h-32  sm:w-full mx-auto bg-black my-1 relative overflow-hidden ">
 
-    <img src="{{ asset('images/commerce/catalog/heets-slate-header.jpg') }}" class="h-full sm:h-72 opacity-50 w-full m-auto object-contain bg-gray-100" />
+    <img src="{{ asset('images/commerce/catalog/heets-slate-header.jpg') }}" class="h-full  opacity-50 w-full m-auto object-contain bg-gray-50" />
     <div class="">
         <h4 class="text-2xl font-bold text-white absolute w-full text-center h-full flex justify-center top-1/3 uppercase">Disposable vapes</h4>
         <h4 class="text-xs font-bold text-white absolute w-full text-center h-full flex justify-center top-2/3 uppercase">Categories <span><i class="fa-solid fa-caret-down text-white mx-1"></i></span></h4>
@@ -45,8 +45,8 @@
 </div>
 
 
-<nav class="flex bg-gray-50 px-6  md:w-3/4 md:mx-auto pt-8" aria-label="Breadcrumb">
-    <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3">
+<nav class="flex bg-gray-50 px-6  md:w-full md:mx-auto pt-8" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3 md:px-8">
         <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
 
@@ -72,7 +72,7 @@
 
 
 <div class="w-full flex justify-center bg-gray-50 ">
-    <form action="{{ route('products.search') }}" method="GET" class="scale-90 p-3 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
+    <form action="{{ route('products.search') }}" method="GET" class="scale-90 md:scale-100 p-3 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
         @csrf
         <div class="flex ">
 
@@ -97,7 +97,7 @@
             </div>
             <div class="relative w-full">
                 <input value="{{ old('keyword') }}" name="keyword" type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded border-l-gray-50 border-l-1 border border-gray-300 " placeholder="Find what you love" required="">
-                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-green-400 rounded border border-green-400 hover:border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold  rounded "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-green-400 rounded border border-green-400 hover:border-green-500 hover:bg-green-500 shadow bg-green-400 hover:bg-green-500  text-white font-bold  rounded "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg></button>
             </div>
