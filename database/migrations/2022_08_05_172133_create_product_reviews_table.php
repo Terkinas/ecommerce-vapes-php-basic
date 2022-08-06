@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('heading');
-            $table->string('description', 256)->default(null);
+            $table->string('description')->default(null);
             $table->boolean('accepted')->default(false);
             $table->integer('rating');
             $table->integer('product_id')->unsigned()->nullable();
