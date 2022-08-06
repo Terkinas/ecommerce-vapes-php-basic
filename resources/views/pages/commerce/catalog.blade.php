@@ -35,17 +35,17 @@
     </div>
 </div>
 
-<div class="h-fit sm:block max-h-32  sm:w-4/5 lg:w-fit mx-auto bg-black my-1 mb-8 relative overflow-hidden">
+<div class="h-fit sm:block max-h-32  sm:w-4/5 lg:w-fit mx-auto bg-black my-1 relative overflow-hidden ">
 
     <img src="{{ asset('images/commerce/catalog/heets-slate-header.jpg') }}" class="h-full sm:h-72 opacity-50 w-full m-auto object-contain bg-gray-100" />
-    <div>
+    <div class="">
         <h4 class="text-2xl font-bold text-white absolute w-full text-center h-full flex justify-center top-1/3 uppercase">Disposable vapes</h4>
         <h4 class="text-xs font-bold text-white absolute w-full text-center h-full flex justify-center top-2/3 uppercase">Categories <span><i class="fa-solid fa-caret-down text-white mx-1"></i></span></h4>
     </div>
 </div>
 
 
-<nav class="flex bg-white px-6  md:w-3/4 md:mx-auto" aria-label="Breadcrumb">
+<nav class="flex bg-gray-50 px-6  md:w-3/4 md:mx-auto pt-8" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3 mx-3">
         <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
@@ -71,12 +71,12 @@
 
 
 
-<div class="w-full flex justify-center bg-white ">
+<div class="w-full flex justify-center bg-gray-50 ">
     <form action="{{ route('products.search') }}" method="GET" class="scale-90 p-3 pt-8 sm:p-0 sm:pt-0 sm:mt-8 sm:ml-8 w-full sm:w-1/3">
         @csrf
         <div class="flex ">
 
-            <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-0 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-green-600 border border-green-600 rounded-l  focus:ring-4 focus:outline-none focus:ring-gray-100  " type="button">All <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-0 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-green-400 border border-green-400 rounded-l  focus:ring-4 focus:outline-none focus:ring-gray-100  " type="button">All <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg></button>
             <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(338px, 690px);">
@@ -97,7 +97,7 @@
             </div>
             <div class="relative w-full">
                 <input value="{{ old('keyword') }}" name="keyword" type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded border-l-gray-50 border-l-1 border border-gray-300 " placeholder="Find what you love" required="">
-                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-green-600 rounded border border-green-600 hover:border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-green-400 rounded border border-green-400 hover:border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold  rounded "><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg></button>
             </div>
@@ -106,8 +106,8 @@
 </div>
 
 <!-- SECTION-CONTENT -->
-<section class="py-4 ">
-    <div class="container max-w-screen-xl mx-auto px-3 ">
+<section class="py-4 bg-gray-50">
+    <div class="container max-w-screen-xl mx-auto px-3 bg-gray-50">
 
         <div class="flex flex-col md:flex-row  w-full md:mx-auto">
             <!-- <aside class="md:w-2/3 lg:w-1/4 px-4 mx-auto mt-24 ml-4">
@@ -214,7 +214,7 @@
                 </div> -->
 
 
-                <div class="bg-white  md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
+                <div class="  md:px-2 pt-8 mb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-1">
 
 
                     @if (isset($results))
@@ -234,8 +234,9 @@
 
                             <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
 
-                                <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
-                                    <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3  scale-95 hover:scale-100 transition duration-500" alt="" />
+                                <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
+                                <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                                    <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64  scale-95 hover:scale-100 transition duration-500" alt="" />
                                 </div>
 
                                 <div class="mt-2 flex justify-between">

@@ -3,7 +3,7 @@
 @section('content')
 
 
-<main class=" bg-white relative overflow-hidden">
+<main class=" bg-neutral-100 relative overflow-hidden">
     <div class="bg-white  flex relative items-center overflow-hidden mb-8">
 
 
@@ -29,7 +29,7 @@
 
 
                 <div class="sm:w-full lg:w-4/5 mx-4 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
-                    <span class="w-20 h-2 bg-green-500 mb-12 rounded-md">
+                    <span class="w-20 h-2 bg-green-400 mb-12 rounded-md">
                     </span>
                     <h1 class="mb-8  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">
                         Gaudyk
@@ -81,11 +81,12 @@
 
                                 <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
 
-                                    <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500 md:bg-gray-50">
+                                    <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500 md:bg-gray-50">
+
                                         @if ($key == 6)
-                                        <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
+                                        <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64  scale-95 hover:scale-100 transition duration-500" alt="" />
                                         @else
-                                        <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
+                                        <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64  scale-95 hover:scale-100 transition duration-500" alt="" />
                                         @endif
 
                                     </div>
@@ -121,10 +122,11 @@
                         <div class="text-center w-full md:justify-start justify-center items-end md:items-center md:flex flex-col justify-center">
                             <div class="relative mx-auto sm:w-full lg:w-full xl:w-1/2 w-3/4 mt-8">
 
-                                <a href="{{route('products.index')}}" class=" block text-center rounded border-1 border-transparent bg-green-500 text-base p-2 py-4 hover:bg-green-500 md:mx-auto md:w-80 text-white w-full  font-semibold
+                                <a href="{{route('products.index')}}" class="  block text-center rounded border-1 border-transparent bg-green-400 text-base p-2 py-4 hover:bg-green-500 md:mx-auto md:w-80 text-white w-full  font-semibold
                                     md:py-4 md:text-base ">
                                     <i class="fa-solid fa-store mr-1"></i>
-                                    <span class="font-bold">Išpūsti katalogą</span>
+                                    <!-- <span class="font-bold ">Išpūsti katalogą</span> -->
+                                    <span class="font-bold ">More Products</span>
                                 </a>
                             </div>
                             <p class="text-xs mx-auto mt-2 text-gray-400 mb-8 w-full  text-center">Products are designed by <span class="text-green-500">{{ config('app.name') }} Inc.</span></p>
@@ -188,11 +190,12 @@
 
                     <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
 
-                        <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                        <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
+                        <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
                             @if ($key == 6)
-                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
+                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
                             @else
-                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 p-3 scale-95 hover:scale-100 transition duration-500" alt="" />
+                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
                             @endif
 
                         </div>

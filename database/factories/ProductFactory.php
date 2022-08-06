@@ -23,10 +23,12 @@ class ProductFactory extends Factory
         // ];
 
         $imageArray = [
-            '20mgNerdBarWhitePeachRazz_2048x2048.jpg',
-            '20mgNerdBarSourAppleIce_2048x2048.jpg',
-            '20mgNerdBarPinkLemonade_2048x2048.jpg',
-            '20mgNerdBarPeachMango_2048x2048.jpg'
+            'fume_strawberry_banana_2__disposable_pod_device_181b9f87-2ffe-4b3b-9d74-f328cf50327e_1024x1024@2x.jpg',
+            'fume_bluberry_mint_disposable_pod_device_702c9aa9-e57b-4190-917e-e28f254cd454_1024x1024@2x.jpg',
+            'fume_blue_razz_2__disposable_pod_device_eca31aac-4668-4c86-ad7b-2dc8ef525b45_1024x1024@2x.jpg',
+            'fume_banana_ice_2__disposable_pod_device_a84d8146-bebd-46d0-b976-22dde0b76ad4_1024x1024@2x.jpg',
+            'fume_lush_ice_2__disposable_pod_device_463dbe6d-1a70-4215-a7a2-9a6b22d2ba27_1024x1024@2x.jpg',
+            'fume_purple_rain_2__disposable_pod_device_db1fde16-eeb4-40af-b6d7-248734ecd662_300x300.jpg',
         ];
 
         $randomNames = [
