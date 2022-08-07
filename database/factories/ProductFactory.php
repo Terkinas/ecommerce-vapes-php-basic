@@ -29,6 +29,27 @@ class ProductFactory extends Factory
             'fume_banana_ice_2__disposable_pod_device_a84d8146-bebd-46d0-b976-22dde0b76ad4_1024x1024@2x.jpg',
             'fume_lush_ice_2__disposable_pod_device_463dbe6d-1a70-4215-a7a2-9a6b22d2ba27_1024x1024@2x.jpg',
             'fume_purple_rain_2__disposable_pod_device_db1fde16-eeb4-40af-b6d7-248734ecd662_300x300.jpg',
+
+            '231cd0fc0f8206753f53e8ef7c0d7dd5--mmf350x350.jpg',
+            'cucumber-puff-bar.jpg',
+            'mixed-berry-ice-puff-bar-xxl.png',
+            'mango-orange-pomelo-puff-bar-xxl.png',
+            'pineapple-grape-puff-bar-xxl.png',
+            'banana-ice-puff-bar-xxl.png',
+            'papaya-strawberry-puff-bar-xxl.png',
+            'lush-ice-puff-bar-xxl.png',
+            'watermelon-cherry-puff-bar-xxl.png',
+            'aloe-mango-melon-puff-bar-xxl.png',
+            'cool-mint-puff-bar-xxl.png',
+            'peach_ice_puff_bar_plus.jpg',
+            'watermelon_puff_bar_plus.jpg',
+            'cool_mint_puff_bar_plus.jpg',
+            'pina_colada_puff_bar_plus.jpg',
+            'guava_ice_puff_bar_plus.jpg',
+            'lychee_ice_puff_bar_plus.jpg',
+            'mixed_berries_puff_bar_plus.jpg',
+            'strawberry_watermelon_puff_bar_plus.jpg',
+            'salt-switch-grape-paradise-jednorazova-elektronicka-cigareta-hroznove-vino.jpg',
         ];
 
         $randomNames = [
@@ -73,7 +94,7 @@ class ProductFactory extends Factory
             'quantity' => 0,
             'onsale' => false,
             'added_by' => 1,
-            'image_path' => $imageArray[rand(0, 2)],
+            'image_path' => $imageArray[rand(0, count($imageArray) - 1)],
         ];
 
 
