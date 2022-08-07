@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\MadePurchase;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -18,7 +19,7 @@ class ProductsController extends Controller
     public function welcome()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('created_at', 'desc')->where('active', 1)->paginate(7)->onEachSide(2);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('created_at', 'asc')->where('active', 1)->paginate(7)->onEachSide(2);
             return view('pages.commerce.welcome', compact('products'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
@@ -150,8 +151,19 @@ class ProductsController extends Controller
     public function show($id, $slug)
     {
         try {
+            $reviews = Review::select('id', 'name', 'heading', 'description', 'rating', 'created_at')->where('product_id', $id)->where('accepted', true)->orderBy('created_at', 'desc')->paginate(6)->onEachSide(1);
             $product = Product::select('id', 'name', 'price', 'color', 'category', 'description', 'size', 'quantity_sold', 'image_path')->where('id', $id)->get();
-            return view('pages.commerce.preview', compact('product'));
+            $reviewsRatings = Review::select('rating')->where('product_id', $id)->where('accepted', true)->get();
+
+            $avarageRate = 0;
+            if ($reviews->total() > 0) {
+                foreach ($reviewsRatings as $review) {
+                    $avarageRate += (($review->rating * 100) / $reviews->total());
+                }
+            }
+
+
+            return view('pages.commerce.preview', compact('product', 'reviews', 'avarageRate'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }

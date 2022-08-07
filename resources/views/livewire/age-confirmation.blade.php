@@ -31,4 +31,9 @@
         </div>
     </div>
 
+    <!-- proceedToCheckout.addEventListener('click', () => {
+        document.querySelector('.shoppingCart').classList.toggle('hidden');
+        sessionStorage.removeItem('opened');
+    }); -->
+
 </div>

@@ -40,12 +40,9 @@ Route::prefix('info')->group(function () {
     Route::post('/cookieagreement', [RulesController::class, 'cookieagreement'])->name('info.cookieagreement');
 });
 
-// Route::prefix('paypal')->group(function () {
-//     Route::get('payment', [PayController::class, 'index'])->name('paypal.index');
-//     Route::post('charge', [PayController::class, 'charge'])->name('paypal.charge');
-//     Route::get('success', [PayController::class, 'success'])->name('paypal.success');
-//     Route::get('error', [PayController::class, 'error'])->name('paypal.error');
-// });
+Route::prefix('reviews')->group(function () {
+    Route::get('/all', [ReviewController::class, 'reviews_all'])->name('reviews.all');
+});
 
 Route::prefix('logistics')->group(function () {
     Route::get('/orders', [LogisticsController::class, 'orders'])->name('logistics.orders');

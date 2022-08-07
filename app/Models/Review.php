@@ -14,10 +14,11 @@ class Review extends Model
         'rating',
         'description',
         'product_id',
+        'user_id',
+        'name',
     ];
 
     protected $hidden = [
-        'user_id',
         'accepted'
     ];
 }

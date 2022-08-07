@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('heading');
             $table->string('description', 1024)->default(null);
             $table->boolean('accepted')->default(false);
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->integer('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')
                 ->on('products')->onUpdate('cascade')->onDelete('set null');
-            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();

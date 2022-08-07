@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         ]);
         // $this->call(UserFactory::class);
         $this->call(ProductsSeeder::class);
+        $this->call(ReviewsSeeder::class);
     }
 }
