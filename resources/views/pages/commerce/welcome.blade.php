@@ -70,7 +70,7 @@
             md:w-4/5 ">
 
 
-                        @foreach ($products as $key=>$product)
+                        @foreach ($topSellers as $key=>$product)
                         @if ($key > 1)
                         <div class="col-span-2 h-80 hidden md:hidden">
                             @else

@@ -39,7 +39,10 @@
                 <p class="mt-2 font-medium sm:ml-4 sm:mt-0">{{ $review->heading }}</p>
             </header>
 
-            <p class="mt-2 text-gray-700">{{ $review->description }}</p>
+            <p class="mt-2 text-gray-700">@if ($review->description != '0')
+                {{$review->description}}
+                @endif
+            </p>
 
             <footer class="mt-4">
                 @foreach ($users as $user)
@@ -50,11 +53,24 @@
 
             </footer>
 
-            <a href="{{route('products.index')}}" class="my-2  block text-center rounded border-1 border-transparent bg-green-400 text-base p-2 py-4 hover:bg-green-500  md:w-80 text-white w-full  font-semibold
-                                    md:py-4 md:text-base ">
-                <!-- <span class="font-bold ">Išpūsti katalogą</span> -->
-                <span class="font-bold ">Confirm</span>
-            </a>
+            <div class="flex space-x-2 w-full">
+
+                <form action="{{route('reviews.reject', ['id' => $review->id ])}}" method="post" class="w-full">
+                    @csrf
+                    <!-- <span class="font-bold ">Išpūsti katalogą</span> -->
+                    <button type="submit" class="my-2 relative  block text-center rounded border-1 border-transparent bg-red-400 text-base p-2 py-4 hover:bg-red-500  text-white w-full  font-semibold
+                                    md:py-4 md:text-base ">Reject</button>
+                </form>
+
+                <form action="{{route('reviews.accept', ['id' => $review->id ])}}" method="post" class="w-full">
+                    @csrf
+                    <!-- <span class="font-bold ">Išpūsti katalogą</span> -->
+                    <button type="submit" class="my-2  block text-center rounded border-1 border-transparent bg-green-400 text-base p-2 py-4 hover:bg-green-500  text-white w-full  font-semibold
+                                    md:py-4 md:text-base ">Confirm</button>
+                </form>
+
+
+            </div>
         </blockquote>
         @endif
         @endforeach

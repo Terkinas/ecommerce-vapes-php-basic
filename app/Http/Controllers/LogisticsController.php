@@ -14,7 +14,7 @@ class LogisticsController extends Controller
     public function orders()
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $orders = Order::orderBy('id', 'ASC')->where('id', '>', 0)->paginate(50);
                 $orderedproducts = OrderProduct::get();
 
@@ -29,7 +29,7 @@ class LogisticsController extends Controller
     public function allorders()
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $orders = Order::orderBy('id', 'ASC')->where('id', '>', 0)->paginate(50);
                 $orderedproducts = OrderProduct::get();
 
@@ -44,7 +44,7 @@ class LogisticsController extends Controller
     public function dispatched(Request $request, $id)
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $order = Order::find($id);
                 //$order->dispatched = !$order->dispatched;
                 $order->save();

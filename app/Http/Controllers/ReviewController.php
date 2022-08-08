@@ -30,11 +30,11 @@ class ReviewController extends Controller
 
             Review::create([
                 'heading' => request('heading'),
-                'description' => request('description'),
+                'description' => request('description') || '',
                 'rating' => request('rating'),
 
                 'user_id' => auth()->user()->id,
-                'name' => User::select('name')->where('id', auth()->user()->id)->first(),
+                'name' => auth()->user()->name,
                 'product_id' => $id,
                 'accepted' => false,
 
@@ -51,8 +51,8 @@ class ReviewController extends Controller
     {
 
         try {
-            if (isset(auth()->user()->admin)) {
-                $reviews = Review::all();
+            if (auth()->user()->admin) {
+                $reviews = Review::where('accepted', false)->orderBy('created_at', 'desc')->get();
                 $products = Product::all();
                 $users = User::all();
 
@@ -70,6 +70,35 @@ class ReviewController extends Controller
 
 
             return redirect()->back()->with('success', 'Thanks for your feedback, it will appear once it is reviewed');
+        } catch (\Exception $e) {
+            return redirect()->route('404')->with('error', $e);
+        }
+    }
+
+    public function accept($id)
+    {
+        try {
+            if (auth()->user()->admin) {
+                $review = Review::find($id);
+                $review->accepted = true;
+                $review->save();
+            }
+
+            return redirect()->back()->with('success', 'Review accepted!');
+        } catch (\Exception $e) {
+            return redirect()->route('404')->with('error', $e);
+        }
+    }
+
+    public function reject($id)
+    {
+        try {
+            if (auth()->user()->admin) {
+                $review = Review::find($id);
+                $review->delete();
+            }
+
+            return redirect()->back()->with('success', 'Review accepted!');
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }

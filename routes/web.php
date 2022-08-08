@@ -42,6 +42,9 @@ Route::prefix('info')->group(function () {
 
 Route::prefix('reviews')->group(function () {
     Route::get('/all', [ReviewController::class, 'reviews_all'])->name('reviews.all');
+    Route::post('/add/{id}', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::post('/accept/{id}', [ReviewController::class, 'accept'])->name('reviews.accept');
+    Route::post('/reject/{id}', [ReviewController::class, 'reject'])->name('reviews.reject');
 });
 
 Route::prefix('logistics')->group(function () {
@@ -88,10 +91,6 @@ Route::prefix('cart')->group(function () {
     Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
-Route::prefix('reviews')->group(function () {
-    Route::post('/add/{id}', [ReviewController::class, 'store'])->name('reviews.store');
-});
-
 
 Route::middleware([
     'auth:sanctum',
@@ -109,6 +108,10 @@ Route::prefix('error')->group(function () {
     });
 });
 
-Route::get('*', function () {
+Route::get('/error', function () {
     return view('pages.error.404');
 })->name('404');
+
+Route::Fallback(function () {
+    return view('pages.error.404');
+});

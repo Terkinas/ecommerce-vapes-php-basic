@@ -19,8 +19,9 @@ class ProductsController extends Controller
     public function welcome()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('created_at', 'asc')->where('active', 1)->paginate(7)->onEachSide(2);
-            return view('pages.commerce.welcome', compact('products'));
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('created_at', 'asc')->where('active', 1)->paginate(7)->onEachSide(1);
+            $topSellers = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('size', 'asc')->where('active', 1)->paginate(2)->onEachSide(1);
+            return view('pages.commerce.welcome', compact('products', 'topSellers'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }
@@ -29,7 +30,7 @@ class ProductsController extends Controller
     public function index()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(6)->onEachSide(2);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(6)->onEachSide(1);
             return view('pages.commerce.catalog', compact('products'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
@@ -44,7 +45,7 @@ class ProductsController extends Controller
     public function create()
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 return view('pages.admin.create');
             } else {
                 return redirect()->route('404');
@@ -63,7 +64,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
 
                 $validated = $request->validate([
                     'name' => 'required|max:255',
@@ -188,7 +189,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $product = Product::find($id)->get();
                 return view('pages.admin.edit', compact('product'));
             }
@@ -208,7 +209,7 @@ class ProductsController extends Controller
     {
         try {
             $input = $request->all();
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $product = Product::find($id);
                 $product->name = $input['name'];
                 $product->subtitle = $input['subtitle'];

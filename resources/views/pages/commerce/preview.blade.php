@@ -192,7 +192,7 @@
                                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                                 </svg>
                             </button>
-                            @if(isset(auth()->user()->admin))
+                            @if(auth()->user()->admin)
                             <a href="{{ route('products.edit', ['id' => $product[0]->id]) }}" class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
@@ -411,7 +411,7 @@
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                         message
                     </label>
-                    <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24 resize-none" name="description" id="message"></textarea>
+                    <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-24 resize-none" name="description"></textarea>
                     <p class="text-gray-600 text-xs italic">Describe your opinion (optional)</p>
                 </div>
             </div>

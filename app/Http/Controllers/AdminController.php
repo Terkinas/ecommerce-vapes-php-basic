@@ -10,7 +10,7 @@ class AdminController extends Controller
     public function menu()
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 return view('pages.admin.menu');
             } else {
                 return redirect()->route('404');
@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function toggle()
     {
         try {
-            if (isset(auth()->user()->admin)) {
+            if (auth()->user()->admin) {
                 $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->paginate(14)->onEachSide(2);
 
                 return view('pages.admin.toggle', compact('products'));
