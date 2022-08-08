@@ -45,7 +45,7 @@ class ProductsController extends Controller
     public function create()
     {
         try {
-            if (auth()->user()->admin) {
+            if (isset(auth()->user()->admin)) {
                 return view('pages.admin.create');
             } else {
                 return redirect()->route('404');
@@ -64,7 +64,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         try {
-            if (auth()->user()->admin) {
+            if (isset(auth()->user()->admin)) {
 
                 $validated = $request->validate([
                     'name' => 'required|max:255',
@@ -189,7 +189,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
         try {
-            if (auth()->user()->admin) {
+            if (isset(auth()->user()->admin)) {
                 $product = Product::find($id)->get();
                 return view('pages.admin.edit', compact('product'));
             }
@@ -209,7 +209,7 @@ class ProductsController extends Controller
     {
         try {
             $input = $request->all();
-            if (auth()->user()->admin) {
+            if (isset(auth()->user()->admin)) {
                 $product = Product::find($id);
                 $product->name = $input['name'];
                 $product->subtitle = $input['subtitle'];

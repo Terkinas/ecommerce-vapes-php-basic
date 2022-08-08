@@ -46,6 +46,22 @@ class ReviewFactory extends Factory
             "Oho, šitas pats tas",
             "Omg baikit, paliksiu savo alga visa",
             "ople, nustebino",
+            "Geras, aciu",
+            "Patiko, ačiū",
+            "Pirksiu dar :)",
+            "Visai nieko toks",
+            "Man kaip tik",
+            "geras, rekomenduoju",
+            "Paliko gerą įspudį",
+            "neišpirkit, nes imsiu dar :D",
+            "Opa",
+            "Geruls",
+            "aciu",
+            "Ačiu, greitai gavau",
+            "Retai rašau atsiliepimus",
+            "išties neblogas",
+            "Toks kokio ir tikėjaus :d"
+
         ];
 
         $specificHeading = [
