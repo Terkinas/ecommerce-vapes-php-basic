@@ -45,6 +45,7 @@ class ReviewFactory extends Factory
             "Skanus",
             "Oho, šitas pats tas",
             "Omg baikit, paliksiu savo alga visa",
+            "ople, nustebino",
         ];
 
         $specificHeading = [
@@ -63,8 +64,23 @@ class ReviewFactory extends Factory
             "sveiki, gal žinot kur įsigyti elfbar arbūzinį?",
             "Nebandet tabako skonio?",
             "sunku apibudinti, bet nustebau, nes maniau kad slykstokas gali buti. Man dar patiko skonis, jauciasi saldumas ir aromatas 🙂",
-            "Nusipirkau dvi - persikų ir bananų, nesuprantu kaip, bet per dieną išrūkiau viską. Bet skonis labai geras :D"
-
+            "Nusipirkau dvi - persikų ir bananų, nesuprantu kaip, bet per dieną išrūkiau viską. Bet skonis labai geras :D",
+            "kam valgyt vaisius jei sitas yra xd",
+            "sunku saika palaikyt kai toks skonis, suss",
+            "skaiciavau traukimu skaiciu, tai tiek kiek parasyta :D jkj, neblogas sitas",
+            "kas skanu tas nesveika, bet pagarinau ir nebesuku galvos ",
+            "Tikrai geras",
+            "Skanus!",
+            "Wow, patiko",
+            "nunese galva xd",
+            "Tapau su situ narkomanas lmao",
+            "kaip druskos nemegejui, pakanka",
+            "zjbs, greit atsiunte",
+            "Galetu ir elekronkei sykstis sitas but, zjbs",
+            "elekronkei sykstis sitas galetu but, skanu",
+            "Mama uzuodus susigunde net :D",
+            "tevai uzeja i kambari galvoja,kad saldainiu priedes :p",
+            "ulialia, patiko",
         ];
 
         $randomDescription = [
