@@ -4,8 +4,8 @@
 
 
 <main class=" bg-neutral-50 relative overflow-hidden ">
-    <div class="h-fit bg-white md:bg-neutral-50 sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-3/4 mx-auto md:rounded-md  sm:my-0 pb-8 relative overflow-hidden">
-        <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="h-full sm:h-96 w-full m-auto object-contain" />
+    <div class="h-fit bg-white  sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-full mx-auto md:rounded-md  sm:my-0 pb-8 relative overflow-hidden">
+        <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="h-full sm:h-96 w-full md:w-3/4 m-auto object-contain" />
     </div>
     <div class="  flex relative items-center overflow-hidden mb-8">
 
@@ -17,7 +17,7 @@
         </div> -->
 
 
-        <div class="container mx-auto sm:flex-row relative  pb-8 sm:pt-8">
+        <div class="container bg-white sm:flex-row relative  pb-8 sm:pt-8">
 
 
 
@@ -30,7 +30,7 @@
             <div class="py-4 bg-white  md:rounded-xl">
 
 
-                <div class=" sm:w-full md:4/5 lg:w-3/5 mx-4 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
+                <div class=" sm:w-full md:4/5 lg:w-3/5 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
                     <span class="w-20 h-2 bg-green-400 mb-12 rounded-md">
                     </span>
                     <h1 class=" mb-8  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">
@@ -193,7 +193,7 @@
                     <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
 
                         <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
-                        <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                        <div class="bg-white rounded-lg shadow-sm hover:-translate-y-1 transition duration-500">
                             @if ($key == 6)
                             <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
                             @else
