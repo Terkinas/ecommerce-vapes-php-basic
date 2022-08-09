@@ -4,7 +4,7 @@
 
 
 <main class=" bg-neutral-50 relative overflow-hidden ">
-    <div class="h-fit bg-white md:bg-neutral-50 sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-3/4 mx-auto md:rounded-md my-1 sm:my-0 pb-8 relative overflow-hidden">
+    <div class="h-fit bg-white md:bg-neutral-50 sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-3/4 mx-auto md:rounded-md  sm:my-0 pb-8 relative overflow-hidden">
         <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="h-full sm:h-96 w-full m-auto object-contain" />
     </div>
     <div class="  flex relative items-center overflow-hidden mb-8">
@@ -12,14 +12,12 @@
 
         <!-- svg -->
 
-        <div class="absolute z-index-100 w-32 sm:w-64 top-1 left-2/3 sm:left-96 opacity-25">
+        <!-- <div class="absolute z-index-100 w-32 sm:w-64 left-2/3 sm:left-96 opacity-25">
 
-        </div>
-
-
-        <div class="container mx-auto sm:flex-row relative pt-1 pb-8 sm:pt-8">
+        </div> -->
 
 
+        <div class="container mx-auto sm:flex-row relative  pb-8 sm:pt-8">
 
 
 
@@ -27,7 +25,9 @@
 
 
 
-            <div class="my-4 bg-white  md:rounded-xl">
+
+
+            <div class="py-4 bg-white  md:rounded-xl">
 
 
                 <div class=" sm:w-full md:4/5 lg:w-3/5 mx-4 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
@@ -135,7 +135,7 @@
                             <!-- <a class="text-center text-gray-900  border-1 border-grey-100 py-3 px-6 font-semibold focus:outline-none hover:bg-gray-50 bg-gray-100 rounded text-sm w-24 sm:w-52 whitespace-nowrap">Sign Up</a> -->
                         </div>
 
-                        <div class="md:mx-auto flex flex-nowrap lg:flex-row md:flex-col justify-center sm:justify-start scale-90 my-3 sm:scale-100">
+                        <!-- <div class="md:mx-auto flex flex-nowrap lg:flex-row md:flex-col justify-center sm:justify-start scale-90 my-3 sm:scale-100">
                             <button class="bg-gray-100 md:bg-white inline-flex pt-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
                                     <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
@@ -157,7 +157,7 @@
                             </button>
 
                         </div>
-                        <p class="text-xs text-gray-400 mb-8 w-full text-center ">We will be launching our app soon.</p>
+                        <p class="text-xs text-gray-400 mb-8 w-full text-center ">We will be launching our app soon.</p> -->
                     </div>
 
                 </div>
@@ -170,57 +170,57 @@
 
 
         @if(count($products) > 0)
-        <div class="w-full bg-white">
-            <h2 class="mx-4 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none
+
+        <h2 class="mx-4 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none
                 md:w-4/5 md:text-center md:mx-auto py-4">
-                Naujienos <br class="hidden md:block" />
+            Naujienos <br class="hidden md:block" />
 
-            </h2>
+        </h2>
 
-            <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
+        <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
                 md:w-4/5">
 
 
-                @foreach ($products as $key=>$product)
-                @if ($key == 6)
-                <div class="col-span-2 h-80 md:hidden">
-                    @else
-                    <div class="">
-                        <p></p>
-                        @endif
-
-
-                        <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
-
-                            <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
-                            <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
-                                @if ($key == 6)
-                                <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
-                                @else
-                                <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
-                                @endif
-
-                            </div>
-
-                            <div class="mt-2 flex justify-between">
-                                <h5 class="font-semibold text-gray-500 text-sm ">
-                                    {{Str::limit($product->name , 42)}}
-                                </h5>
-
-                                <p class=" text-xs text-gray-700 ">
-                                    €{{number_format($product->price / 100,2)}}
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    @endforeach
-
-                </div>
+            @foreach ($products as $key=>$product)
+            @if ($key == 6)
+            <div class="col-span-2 h-80 md:hidden">
                 @else
+                <div class="">
+                    <p></p>
+                    @endif
 
-                <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl scale-90"> Unfortunately, no results found</h2>
+
+                    <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
+
+                        <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
+                        <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                            @if ($key == 6)
+                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
+                            @else
+                            <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64 scale-95 md:p-3 hover:scale-100 transition duration-500" alt="" />
+                            @endif
+
+                        </div>
+
+                        <div class="mt-2 flex justify-between">
+                            <h5 class="font-semibold text-gray-500 text-sm ">
+                                {{Str::limit($product->name , 42)}}
+                            </h5>
+
+                            <p class=" text-xs text-gray-700 ">
+                                €{{number_format($product->price / 100,2)}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                @endforeach
+
             </div>
+            @else
+
+            <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl scale-90"> Unfortunately, no results found</h2>
+
             @endif
 
 
