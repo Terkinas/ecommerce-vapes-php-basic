@@ -4,7 +4,10 @@
 
 
 <main class=" bg-neutral-50 relative overflow-hidden ">
-    <div class="bg-white  flex relative items-center overflow-hidden mb-8">
+    <div class="h-fit sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-3/4 mx-auto md:rounded-md my-1 mb-8 relative overflow-hidden">
+        <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="h-full sm:h-96 w-full m-auto object-contain" />
+    </div>
+    <div class="  flex relative items-center overflow-hidden mb-8">
 
 
         <!-- svg -->
@@ -13,22 +16,21 @@
 
         </div>
 
-        <div class="container mx-auto  lg:px-12 sm:flex-row relative pt-1 pb-8 sm:pt-8 md:w-4/5">
+
+        <div class="container mx-auto sm:flex-row relative pt-1 pb-8 sm:pt-8">
 
 
 
 
 
-            <div class="h-fit sm:block max-h-72  sm:w-4/5 lg:w-fit mx-auto rounded-md my-1 mb-8 relative overflow-hidden">
-                <img src="{{ asset('images/commerce/welcome/disposable-vapes-header-3.jpg') }}" class="h-full sm:h-72 w-full m-auto object-contain" />
-            </div>
 
 
 
-            <div class="my-4  md:bg-gray-100 md:rounded-xl">
+
+            <div class="my-4  bg-gray-100 md:rounded-xl">
 
 
-                <div class=" sm:w-full lg:w-4/5 mx-4 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
+                <div class=" sm:w-full md:4/5 lg:w-3/5 mx-4 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
                     <span class="w-20 h-2 bg-green-400 mb-12 rounded-md">
                     </span>
                     <h1 class=" mb-8  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">

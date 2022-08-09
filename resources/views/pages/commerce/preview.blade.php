@@ -43,43 +43,50 @@
                 <h2 class="text-xs uppercase title-font text-gray-500 tracking-widest">{{ $product[0]->category }}</h2>
                 <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $product[0]->name }}</h1>
                 <div class="flex mb-4">
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-{{$product[0]->color}}-400" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-{{$product[0]->color}}-400" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-{{$product[0]->color}}-400" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-{{$product[0]->color}}-400" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-{{$product[0]->color}}-400" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                        </svg>
-                        <span class="text-gray-600 ml-3">4 Reviews</span>
-                    </span>
+                    <a href="#productReviews" class="flex items-center">
+                        @for ($i = 1; $i <= 5; $i++) @if (round(number_format($avarageRate / 100,1))>= $i)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-{{$product[0]->color}}-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            @else
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            @endif
+
+                            @endfor
+                            <span class="text-gray-600 ml-3">{{number_format($reviews->total())}} Reviews</span>
+                    </a>
                     <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-3">
-                        <a class="text-gray-500">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com" target="_blank" rel="noopener" class="text-gray-500">
                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500">
+                        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fbaryga.lt%2F{{$product[0]->id}}%2F{{ $product[0]->urltag }}" target="_blank" rel="noopener" class="text-gray-500">
                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500">
-                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                            </svg>
-                        </a>
-                        <i class="fa-solid fa-share-nodes text-gray-500"></i>
+                        <button onclick="copysharelink()">
+                            <i id="sharelinklogo" class="fa-solid fa-share-nodes text-gray-500"></i>
+                            <i id="sharelinklogoactive" class="fa-solid fa-check text-gray-500 hidden"></i>
+                        </button>
                     </span>
                 </div>
+
+                <script>
+                    function copysharelink() {
+                        navigator.clipboard.writeText('veikia');
+                        document.getElementById('sharelinklogo').classList.add('hidden');
+                        document.getElementById('sharelinklogoactive').classList.remove('hidden');
+                        setTimeout(() => {
+                            document.getElementById('sharelinklogo').classList.remove('hidden');
+                            document.getElementById('sharelinklogoactive').classList.add('hidden');
+                        }, 700);
+                    }
+                </script>
+
                 <p class="leading-relaxed">{!! $product[0]->description !!}.</p>
                 <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                     <div class="flex">
@@ -222,7 +229,7 @@
 
 
 
-<section>
+<section id="productReviews">
 
     <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 md:w-4/5">
 

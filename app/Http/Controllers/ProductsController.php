@@ -153,7 +153,7 @@ class ProductsController extends Controller
     {
         try {
             $reviews = Review::select('id', 'name', 'heading', 'description', 'rating', 'created_at')->where('product_id', $id)->where('accepted', true)->orderBy('created_at', 'desc')->paginate(6)->onEachSide(1);
-            $product = Product::select('id', 'name', 'price', 'color', 'category', 'description', 'size', 'quantity_sold', 'image_path')->where('id', $id)->get();
+            $product = Product::select('id', 'name', 'price', 'urltag', 'color', 'category', 'description', 'size', 'quantity_sold', 'image_path')->where('id', $id)->get();
             $reviewsRatings = Review::select('rating')->where('product_id', $id)->where('accepted', true)->get();
 
             $avarageRate = 0;
