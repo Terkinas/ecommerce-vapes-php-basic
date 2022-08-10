@@ -7,3 +7,7 @@
     padding-bottom: 50%;
     background-color: teal;
   }
+
+  img {
+    pointer-events: none;
+}
