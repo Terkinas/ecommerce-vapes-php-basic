@@ -56,9 +56,9 @@ Route::prefix('logistics')->group(function () {
 });
 
 Route::get('sitemap', function () {
-    $sitemapFile = SitemapGenerator::create('https://elektriukai.herokuapp.com/')->writeToFile('sitemap.xml');
+    SitemapGenerator::create('https://elektriukai.herokuapp.com/')->writeToFile('sitemap.xml');
 
-    return $sitemapFile;
+    return 'sitemap is created';
 });
 
 //Route::get('/invoice', [invoiceController::class, 'show']);
