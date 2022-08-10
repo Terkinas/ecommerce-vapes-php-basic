@@ -71,12 +71,14 @@
                         <button onclick="copysharelink()">
                             <i id="sharelinklogo" class="fa-solid fa-share-nodes text-gray-500"></i>
                             <i id="sharelinklogoactive" class="fa-solid fa-check text-gray-500 hidden"></i>
+
                         </button>
                     </span>
                 </div>
 
                 <script>
                     function copysharelink() {
+
                         navigator.clipboard.writeText('{{ route("products.show", ["id" => $product[0]->id, "slug" => $product[0]->urltag ]) }}');
 
                         document.getElementById('sharelinklogo').classList.toggle('hidden');

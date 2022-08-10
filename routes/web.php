@@ -11,6 +11,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RulesController;
 use Illuminate\Support\Facades\Route;
 
+use Spatie\Sitemap\SitemapGenerator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +53,12 @@ Route::prefix('logistics')->group(function () {
     Route::get('/orders', [LogisticsController::class, 'orders'])->name('logistics.orders');
     Route::get('/allorders', [LogisticsController::class, 'allorders'])->name('logistics.allorders');
     Route::post('/dispatched/{id}', [LogisticsController::class, 'dispatched'])->name('logistics.dispatched');
+});
+
+Route::get('sitemap', function () {
+    SitemapGenerator::create('https://elektriukai.herokuapp.com/')->writeToFile('sitemap.xml');
+
+    return 'sitemap is created';
 });
 
 //Route::get('/invoice', [invoiceController::class, 'show']);

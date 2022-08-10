@@ -63,7 +63,7 @@
                         </a>
                         @endif
                         @endauth
-                        <a class="text-gray-400 px-3 py-2 inline-block ml-1 rounded-md hover:text-gray-800" href="{{ route('products.index') }}">
+                        <a class="text-gray-700 px-3  py-2 inline-block ml-1 rounded-md hover:text-gray-800" href="{{ route('products.index') }}">
                             <i class="fa fa-search"></i>
                         </a>
                         @if(null !== session()->get('cart') && count(session()->get('cart')->items) > 0)
@@ -73,6 +73,9 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#4ade80" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                             </svg>
+
+
+
                             <!-- <span class="text-xs absolute text-gray-500 -translate-x-1 p-1 rounded-lg font-bold scale-75">{{ count(session()->get('cart')->items) }}</span></i> -->
                         </button>
                         @else
@@ -81,6 +84,8 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                             </svg>
+
+
                         </button>
                         @endif
 

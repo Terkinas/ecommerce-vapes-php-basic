@@ -273,7 +273,6 @@ class ProductsController extends Controller
             $results = 'These are results we were able to found:';
             return view('pages.commerce.catalog', compact('products', 'results'));
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->route('404')->with('error', $e);
         }
     }

@@ -22,7 +22,8 @@ class CartController extends Controller
             $cart->add($product, $product->id, $request->choosedQty);
             $request->session()->put('cart', $cart);
             // session()->forget('cart');
-            return redirect()->route('products.index')->with('success', 'Product has been added successfully');
+            // return redirect()->route('products.index')->with('success', 'Product has been added successfully');
+            return redirect()->back()->with('success', 'Product has been added successfully');
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }
