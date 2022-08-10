@@ -17,7 +17,7 @@
         </div> -->
 
 
-        <div class="container bg-white sm:flex-row relative  pb-8 sm:pt-8">
+        <div class=" bg-white sm:flex-row relative  pb-8 sm:pt-8 mx-auto w-full">
 
 
 
@@ -27,7 +27,7 @@
 
 
 
-            <div class="py-4 bg-white  md:rounded-xl">
+            <div class="py-4 px-3 bg-white  w-full md:rounded-xl ">
 
 
                 <div class=" sm:w-full md:4/5 lg:w-3/5 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
@@ -178,7 +178,7 @@
         </h2>
 
         <div class="grid gap-4 mx-4 grid-cols-2 align-around sm:grid-cols-3 sm:max-w-sm sm:mx-auto sm:max-w-full pb-8
-                md:w-4/5">
+                md:w-3/5">
 
 
             @foreach ($products as $key=>$product)
@@ -193,7 +193,7 @@
                     <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
 
                         <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
-                        <div class="bg-white rounded-lg shadow-sm hover:-translate-y-1 transition duration-500">
+                        <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
                             @if ($key == 6)
                             <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-80 max-h-80 sm:max-h-min sm:h-64 scale-95 hover:scale-100 transition duration-500" alt="" />
                             @else

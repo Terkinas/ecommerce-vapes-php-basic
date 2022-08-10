@@ -4,7 +4,7 @@
 
 
 <div class="z-49">
-    <div class="w-full bg-gray-800 py-2 text-center">
+    <div class="w-full bg-gray-100 py-2 text-center">
         <h2 class="text-red-500 font-bold text-xs md:text-base scale-75 whitespace-nowrap tracking-tight">Warning: The products contain Nicotine. Nicotine is an addictive chemical.</h2>
         <h3 class="text-gray-400  text-xs md:text-base scale-75">Free Shipping on any order over 50 EUR</h3>
     </div>
