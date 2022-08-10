@@ -255,7 +255,7 @@
                     </div>
                     @else
 
-                    <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl scale-90"> Unfortunately, no results found</h2>
+                    <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl mx-2"> Unfortunately, no results found</h2>
 
                     @endif
                     {{ $products->links() }}

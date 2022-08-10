@@ -265,11 +265,15 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         try {
+
             $keyword = $request->keyword;
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->where('name', 'LIKE', '%' . $keyword . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+
+            // $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->where('name', 'LIKE', '%' . strtoupper($keyword) . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->whereRaw('UPPER(`name`) LIKE ?', ['%' . strtoupper($keyword) . '%'])->paginate(6);
             $results = 'These are results we were able to found:';
             return view('pages.commerce.catalog', compact('products', 'results'));
         } catch (\Exception $e) {
+            dd($e);
             return redirect()->route('404')->with('error', $e);
         }
     }
