@@ -91,7 +91,7 @@ class ProductFactory extends Factory
             'subtag1' => 'new',
             'subtag2' => 'faschioned',
             'active' => 1,
-            'quantity' => 0,
+            'quantity' => 2,
             'onsale' => false,
             'added_by' => 1,
             'image_path' => $imageArray[rand(0, count($imageArray) - 1)],

@@ -14,7 +14,7 @@ class CartController extends Controller
     public function store(Request $request, $id)
     {
         try {
-            $product = Product::select('id', 'name', 'price', 'color', 'image_path')->where('id', $id)->firstOrFail();
+            $product = Product::select('id', 'name', 'price', 'color', 'image_path')->where('id', $id)->where('quantity', '>', 0)->firstOrFail();
             $oldCart = $request->session()->has('cart') ? $request->session()->get('cart') : null;
 
             $cart = new Cart($oldCart);

@@ -195,7 +195,11 @@
                             <div class="inline flex ml-auto">
 
                                 @csrf
-                                <button class="shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to cart</button>
+
+                                @if ($product[0]->quantity <= 0) <button disabled type="button" class="shadow bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Sold out</button>
+                                    @else
+                                    <button class="shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to cart</button>
+                                    @endif
                             </div>
                             <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">

@@ -247,21 +247,28 @@
                                         €{{number_format($product->price / 100,2)}}
                                     </p>
                                 </div>
-                            </a>
-                        </div>
-
-                        @endforeach
+                                @if ($product->quantity <= 0) <div class="text-red-500 font-semibold uppercase text-xs"> sold out
+                        </div> @endif
+                        </a>
 
                     </div>
-                    @else
 
-                    <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl mx-2"> Unfortunately, no results found</h2>
+                    @endforeach
 
-                    @endif
-                    {{ $products->links() }}
                 </div>
-            </main> <!-- col.// -->
-        </div> <!-- grid.// -->
+                @else
+
+                <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl mx-2"> Unfortunately, no results found</h2>
+
+                @endif
+                @if (route('products.search'))
+                {{ $products->appends(array_filter(request()->except('page')))->render() }}
+                @else
+                {{ $products->links() }}
+                @endif
+        </div>
+        </main> <!-- col.// -->
+    </div> <!-- grid.// -->
 
     </div> <!-- container .// -->
 </section>

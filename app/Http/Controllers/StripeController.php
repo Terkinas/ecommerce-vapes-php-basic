@@ -102,6 +102,7 @@ class StripeController extends Controller
 
                 $productsold = Product::find($item['item']->id);
                 $productsold->quantity_sold += $item['qty'];
+                $productsold->quantity -= $item['qty'];
                 $productsold->save();
             }
 
