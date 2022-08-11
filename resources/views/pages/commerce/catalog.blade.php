@@ -230,24 +230,27 @@
 
 
                         @foreach ($products as $product)<div class="">
+                            @if ($product->quantity <= 0) <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden opacity-50 ">
+                                @else
+                                <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
+                                    @endif
 
-                            <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
 
-                                <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
-                                <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
-                                    <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64  scale-95 hover:scale-100 transition duration-500" alt="" />
-                                </div>
+                                    <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
+                                    <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
+                                        <img src="{{ asset('images/products/' . $product->image_path) }}" class="object-contain w-full h-40 max-h-40 sm:max-h-min sm:h-64  scale-95 hover:scale-100 transition duration-500" alt="" />
+                                    </div>
 
-                                <div class="mt-2 flex justify-between">
-                                    <h5 class="font-semibold text-gray-500 text-sm">
-                                        {{Str::limit($product->name , 42)}}
-                                    </h5>
+                                    <div class="mt-2 flex justify-between">
+                                        <h5 class="font-semibold text-gray-500 text-sm">
+                                            {{Str::limit($product->name , 42)}}
+                                        </h5>
 
-                                    <p class=" text-xs text-gray-700">
-                                        €{{number_format($product->price / 100,2)}}
-                                    </p>
-                                </div>
-                                @if ($product->quantity <= 0) <div class="text-red-500 font-semibold uppercase text-xs"> sold out
+                                        <p class=" text-xs text-gray-700">
+                                            €{{number_format($product->price / 100,2)}}
+                                        </p>
+                                    </div>
+                                    @if ($product->quantity <= 0) <div class="text-red-500 font-semibold uppercase text-xs"> sold out
                         </div> @endif
                         </a>
 

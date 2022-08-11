@@ -182,16 +182,17 @@
 
 
             @foreach ($products as $key=>$product)
-            @if ($product->quantity <= 0) <div class="opacity-75"> @endif
-                @if ($key == 6)
-                <div class="col-span-2 h-80 md:hidden">
-                    @else
-                    <div class="">
-                        <p></p>
-                        @endif
 
+            @if ($key == 6)
+            <div class="col-span-2 h-80 md:hidden">
+                @else
+                <div class="">
+                    <p></p>
+                    @endif
 
-                        <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
+                    @if ($product->quantity <= 0) <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col opacity-75"> @else <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col">
+                            @endif
+
 
                             <!-- <div class="bg-{{$product->color}}-100 bg-opacity-50 rounded-sm shadow-sm hover:-translate-y-1 transition duration-500"> -->
                             <div class="bg-white rounded-sm shadow-sm hover:-translate-y-1 transition duration-500">
@@ -213,14 +214,14 @@
                                 </p>
                             </div>
                         </a>
-                    </div>
-                    @if ($product->quantity <= 0) </div> @endif
-                        @endforeach
-
                 </div>
-                @else
 
-                <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl scale-90"> Unfortunately, no results found</h2>
+                @endforeach
+
+            </div>
+            @else
+
+            <h2 class=" text-2xl font-extrabold tracking-tight text-gray-700 sm:text-xl scale-90"> Unfortunately, no results found</h2>
 
 
         </div>

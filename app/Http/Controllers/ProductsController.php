@@ -30,7 +30,7 @@ class ProductsController extends Controller
     public function index()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'quantity', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'asc')->where('active', 1)->paginate(6)->onEachSide(1);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'quantity', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'desc')->where('active', 1)->paginate(6)->onEachSide(1);
             return view('pages.commerce.catalog', compact('products'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
