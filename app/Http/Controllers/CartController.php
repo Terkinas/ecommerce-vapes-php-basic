@@ -40,7 +40,7 @@ class CartController extends Controller
             $cart->update($product, $product->id, $request->choosedQty);
             $request->session()->put('cart', $cart);
             // session()->forget('cart');
-            return redirect()->route('products.index');
+            return redirect()->back();
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
         }
@@ -71,6 +71,12 @@ class CartController extends Controller
 
             if (session()->has('cart')) {
                 $cart = session()->get('cart');
+
+                foreach ($cart->items as $key => $item) {
+                    //dd($item['qty']);
+
+                }
+
                 return view('pages.commerce.checkout', ['cart' => $cart->items, 'totalPrice' => $cart->totalPrice]);
             }
 

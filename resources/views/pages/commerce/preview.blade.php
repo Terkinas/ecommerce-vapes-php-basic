@@ -196,7 +196,7 @@
 
                                 @csrf
 
-                                @if ($product[0]->quantity <= 0) <button disabled type="button" class="shadow bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Sold out</button>
+                                @if ($product[0]->quantity <= 0) <button disabled type="button" class=" bg-transparent focus:shadow-outline outline-none text-red-400 font-bold py-2 px-4 rounded">Sold out</button>
                                     @else
                                     <button class="shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to cart</button>
                                     @endif

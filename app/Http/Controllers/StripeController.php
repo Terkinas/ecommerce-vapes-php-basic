@@ -111,6 +111,7 @@ class StripeController extends Controller
 
             // return $order;
             Mail::to($data['billing_details']['email'])->send(new MadePurchase($CartItems, $order, $request->session()->get('cart')));
+            Mail::to('pixartey@gmail.com')->send(new MadePurchase($CartItems, $order, $request->session()->get('cart')));
 
             session()->forget('stripe_payment_intent');
 
@@ -130,7 +131,41 @@ class StripeController extends Controller
     {
         $cartArray = array();
 
+
         foreach (session()->get('cart')->items as $item) {
+
+            $checkItem = Product::where('id', $item['item']->id)->where('quantity', '>', $item['qty'])->first();
+            if (!$checkItem) {
+                $missingItemQty = Product::where('id', $item['item']->id)->pluck('quantity');
+
+                function getItemQty($missingItemQty)
+                {
+                    if ($missingItemQty >= 0) {
+                        return $missingItemQty;
+                    } else {
+                        return '0';
+                    }
+                }
+
+                $data['status'] = 'soldout';
+                $data['item'] = $item['item']->name;
+                $data['itemId'] = $item['item']->id;
+
+                // $data['itemQty'] = '0';
+                // if (number_format($missingItemQty) > 0) {
+                //     $data['itemQty'] = $missingItemQty;
+                // } else {
+                //     $data['itemQty'] = '0';
+                // }
+
+                $data['itemQty'] = $missingItemQty; // most likely a string
+
+
+
+
+                return response($data);
+            }
+
             $cartArray[] = [
                 'price_data' => [
                     'currency' => 'EUR',
@@ -208,8 +243,10 @@ class StripeController extends Controller
 
             session()->put('stripe_payment_intent', $session['payment_intent']);
 
+            $data['status'] = 'success';
+            $data['stripeSession'] = $stripe_session;
 
-            return response()->json($stripe_session);
+            return response()->json($data);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 404);
         }

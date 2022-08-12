@@ -55,6 +55,7 @@
                                         @if(isset($cart) && count($cart) > 0)
 
                                         @foreach ($cart as $item) <li class="flex py-6">
+
                                             <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border bg-gray-50 border-gray-200">
                                                 <img src="{{ asset('images/products/' . $item['item']->image_path) }}" alt="{{ $item['item']['name'] }}" class="h-full w-full object-contain p-2 object-center">
                                             </div>
@@ -69,11 +70,12 @@
                                                         <p class="ml-4">€{{ number_format($item['item']['price'] / 100,2) }}</p>
                                                     </div>
                                                     <p class="mt-1 text-sm text-gray-500">{{ $item['item']['color'] }}</p>
+
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
                                                     <div class="flex flex-1 items-end justify-between">
                                                         <!-- component -->
-                                                        <div class="custom-number-input h-10 w-32">
+                                                        <div class="custom-number-input h-10 w-32 scale-90 origin-left">
                                                             <form action="{{ route('cart.update', ['id' => $item['item']->id]) }}" method="post">
                                                                 @csrf
                                                                 <div class="flex flex-row h-8 w-full rounded-lg relative bg-transparent mt-1">

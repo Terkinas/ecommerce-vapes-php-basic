@@ -40,6 +40,9 @@
             
             if(amount=='' || customer_email==''){
                 alert('Type in your email');
+                document.getElementById('payicon').style.display = 'inline';
+            document.getElementById('payloadingicon').classList.remove('opacity-100');
+            donateButton.prop('disabled',false);
                 return;
             }
             $.ajax({
@@ -53,13 +56,24 @@
                 },
                 
                 success: function (data) { 
-                    stripe.redirectToCheckout({
-                        sessionId: data
-                    })
+                    if(data.status == 'success') {
+                        stripe.redirectToCheckout({
+                            sessionId: data.stripeSession
+                        })
+                    }
+                    else if(data.status == 'soldout') {
+                        window.location.search += '&itemName=' + data.item + '&itemId=' + data.itemId + '&itemQty=' + data.itemQty;
+                    }
+                    else {
+                        alert('Something went wrong!');
+                    }
+                    
                 },
                 error : function (data){
                     donateButton.prop('disabled',false);
-                    alert('Something went wrong!');
+                    window.location.reload();
+                    // alert('One of items you picked has been sold out :(');
+                    // alert('Looks like one of your items has been sold out');
                     
                 }
             });

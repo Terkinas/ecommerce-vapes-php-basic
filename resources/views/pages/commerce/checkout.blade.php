@@ -35,6 +35,24 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             </ul>
         </div><br>
         @endif
+
+        @if ( Request::get('itemName') )
+        <div class="flex items-center justify-between p-4 text-red-700 border rounded border-red-900/10 bg-red-50" role="alert">
+            @if (Request::get('itemQty') <= 0 ) <strong class="text-sm font-medium"> {{ Request::get('itemName') }} is sold out, please remove it in order to continue purchase </strong>
+                @else
+                <strong class="text-sm font-medium">Unfortunately, only {{Request::get('itemQty')}} <span class="opacity-75">'{{ Request::get('itemName') }}'</span> left!</strong>
+                @endif
+
+
+                <button class="close" data-dismiss="alert" class="opacity-90" type="button">
+                    <span class="sr-only"> Close </span>
+
+                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+        </div>
+        @endif
     </div>
 </div>
 
@@ -46,7 +64,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
             <div class="py-12 bg-gray-50 md:py-24">
                 <div class="max-w-lg px-4 mx-auto lg:px-8">
                     <div class="flex items-center">
-                        <span class="w-10 h-10 bg-blue-300 rounded"></span>
+                        <span class="w-10 h-10 bg-green-300 rounded"></span>
 
                         <h2 class="ml-4 font-medium">Shopping Cart</h2>
                     </div>
@@ -60,6 +78,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
                         <div class="flow-root">
                             <ul class="-my-4 divide-y divide-gray-200">
                                 @foreach ($cart as $item)
+
                                 <li class="flex py-6">
                                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border bg-gray-50 border-gray-200">
                                         <img src="{{ asset('images/products/' . $item['item']->image_path) }}" alt="{{ $item['item']['name'] }}" class="h-full w-full object-contain p-2 object-center">
@@ -73,10 +92,59 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
                                                 </h3>
                                                 <p class="ml-4 whitespace-nowrap">€ {{ number_format($item['item']['price'] / 100,2) }}</p>
                                             </div>
-                                            <p class="mt-1 text-sm text-gray-500">{{ $item['item']['color'] }}</p>
+                                            @if ( Request::get('itemId') == $item['item']->id )
+
+
+                                            @if (Request::get('itemQty') <= 0 ) <p class="text-red-400 text-xs">This item is out of stock</p>
+                                                @else
+                                                <p class="text-red-400 text-xs">Only {{Request::get('itemQty')}} left!</p>
+
+                                                @endif
+                                                @endif
+                                                <p class="mt-1 text-sm text-gray-500">{{ $item['item']['color'] }}</p>
+
+
                                         </div>
+
                                         <div class="flex flex-1 items-end justify-between text-sm">
-                                            <p class="text-gray-400"> {{ $item['qty'] }} Qty.</p>
+                                            <!-- component -->
+                                            <div class="custom-number-input h-10 w-32 scale-90 origin-left">
+                                                <form action="{{ route('cart.update', ['id' => $item['item']->id]) }}" method="post">
+                                                    @csrf
+                                                    <div class="flex flex-row h-8 w-full rounded-lg relative bg-transparent mt-1">
+                                                        <button data-action="decrement" class=" bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                                            <span class="m-auto text-2xl font-thin">−</span>
+                                                        </button>
+                                                        <input type="number" class="outline-none border-transparent focus:outline-none text-center w-full bg-gray-50 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="choosedQty" value="{{ $item['qty'] }}"></input>
+                                                        <button data-action="increment" class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                                            <span class="m-auto text-2xl font-thin">+</span>
+                                                        </button>
+                                                        <!-- <p class="text-gray-400"> {{ $item['qty'] }} Qty.</p> -->
+                                                    </div>
+                                                </form>
+
+
+
+
+                                                <style>
+                                                    input[type='number']::-webkit-inner-spin-button,
+                                                    input[type='number']::-webkit-outer-spin-button {
+                                                        -webkit-appearance: none;
+                                                        margin: 0;
+                                                    }
+
+                                                    .custom-number-input input:focus {
+                                                        outline: none !important;
+                                                    }
+
+                                                    .custom-number-input button:focus {
+                                                        outline: none !important;
+                                                    }
+                                                </style>
+
+
+                                            </div>
+                                            <!-- <p class="text-gray-400"> {{ $item['qty'] }} Qty.</p> -->
 
                                             <div class="flex">
                                                 <form action="{{ route('cart.remove', ['id' => $item['item']['id']]) }}" method="post">

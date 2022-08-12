@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class CartPreview extends Component
@@ -10,6 +11,7 @@ class CartPreview extends Component
     {
         if (session()->has('cart')) {
             $cart = session()->get('cart');
+
 
             return view('livewire.cart-preview', ['cart' => $cart->items, 'totalPrice' => $cart->totalPrice]);
         } else {
