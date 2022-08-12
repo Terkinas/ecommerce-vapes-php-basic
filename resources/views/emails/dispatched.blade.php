@@ -70,7 +70,7 @@
                                     <table cellpadding="0" cellspacing="0" class="es-header" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
                                         <tr style="border-collapse:collapse">
                                             <td align="center" style="padding:0;Margin:0">
-                                                <table class="es-header-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#ffedd5
+                                                <table class="es-header-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#fefae0
 ;width:600px" cellspacing="0" cellpadding="0" bgcolor="#151719" align="center">
                                                     <tr style="border-collapse:collapse">
                                                         <td align="left" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:15px;padding-right:15px">

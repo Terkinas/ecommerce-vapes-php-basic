@@ -315,6 +315,11 @@
                 overflow: visible !important;
                 max-height: inherit !important
             }
+
+            .for-mobile-products-image {
+                transform: scale(0.75);
+                transform-origin: center;
+            }
         }
     </style>
 </head>
@@ -583,7 +588,7 @@
                                     <tr style="border-collapse:separate; margin-bottom: 14px">
                                         <td align="left" style="margin:0;margin:0 auto;padding-bottom:0;padding-left:20px;padding-right:20px; background-color: #ffffff; border-radius: 5px;">
                                             <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:178px" valign="top"><![endif]-->
-                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                            <table class="for-mobile-products-image" class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
                                                 <tr style="border-collapse:collapse">
                                                     <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:178px">
                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;  max-height: 90vw; padding: 14px; transform:scale(0.9)">
