@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        $userEmail = 'steve' + strval(rand(50, 2000)) + '@gmail.com';
+
         \App\Models\User::factory()->create([
             'name' => 'Test User',
-            'email' => 'steve' + strval(rand(50, 2000)) + '@gmail.com',
+            'email' => $userEmail,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
         // $this->call(UserFactory::class);
