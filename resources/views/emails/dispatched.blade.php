@@ -173,7 +173,8 @@
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="esd-block-text es-p15t es-p10b" align="center">
-                                                                                                    <p style="font-size: 16px; color: #777777;">January 1, 2016 - 1:30PM EST</p>
+                                                                                                    <!-- <p style="font-size: 16px; color: #777777;">January 1, 2016 - 1:30PM EST</p> -->
+                                                                                                    <p style="font-size: 16px; color: #777777;">In the next 2-3 days</p>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>

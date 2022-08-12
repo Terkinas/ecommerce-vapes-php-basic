@@ -323,7 +323,7 @@
 
             .product-name-for-mobile {
                 display: inline-block;
-                width: 180px;
+                width: 120px;
                 white-space: nowrap;
                 overflow: hidden !important;
                 text-overflow: ellipsis;
