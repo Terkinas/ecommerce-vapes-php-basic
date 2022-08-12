@@ -19,9 +19,26 @@ class DatabaseSeeder extends Seeder
 
         $userEmail = 'steve' + strval(rand(50, 2000)) + '@gmail.com';
 
+        $randomEmail = [
+            "Harry@gmail.com",
+            "Bruce@gmail.com",
+            "Carolyn@gmail.com",
+            "Albert@gmail.com",
+            "Randy@gmail.com",
+            "Larry@gmail.com",
+            "Lois@gmail.com",
+            "Jesse@gmail.com",
+            "Ernest@gmail.com",
+            "Theresa@gmail.com",
+            "Henry@gmail.com",
+            "Michelle@gmail.com",
+            "Frank@gmail.com",
+            "Shirley@gmail.com",
+        ];
+
         \App\Models\User::factory()->create([
             'name' => 'Test User',
-            'email' => $userEmail,
+            'email' => $randomEmail[rand(0, count($randomEmail) - 1)],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
         // $this->call(UserFactory::class);
