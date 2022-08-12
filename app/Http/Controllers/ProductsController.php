@@ -19,8 +19,8 @@ class ProductsController extends Controller
     public function welcome()
     {
         try {
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'quantity', 'category')->orderBy('created_at', 'asc')->where('active', 1)->paginate(7)->onEachSide(1);
-            $topSellers = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'quantity', 'category')->orderBy('size', 'asc')->where('active', 1)->paginate(2)->onEachSide(1);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'quantity', 'category')->orderBy('created_at', 'desc')->where('active', 1)->paginate(7)->onEachSide(1);
+            $topSellers = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'quantity', 'category')->orderBy('size', 'asc')->where('active', 1)->where('quantity', '>', 0)->paginate(2)->onEachSide(1);
             return view('pages.commerce.welcome', compact('products', 'topSellers'));
         } catch (\Exception $e) {
             return redirect()->route('404')->with('error', $e);
