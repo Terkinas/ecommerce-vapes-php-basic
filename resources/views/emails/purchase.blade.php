@@ -695,7 +695,7 @@
                                                     <td class="es-m-p0r es-m-p20b" valign="top" align="center" style="padding:0;Margin:0;width:178px">
                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-p0l es-m-txt-c" align="left" style="padding:0;Margin:0;font-size:0"><img src="https://vtqncz.stripocdn.email/content/guids/CABINET_5ebd51945adb862745b1a105fbb2c4f4/images/431502878865957.png" alt="Petshop logo" title="Petshop logo" width="108" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+                                                                <td class="es-m-p0l es-m-txt-c" align="left" style="padding:0;Margin:0;font-size:0"><img src="{{ asset('images/commerce/logos/emailLogo.png') }}" alt="Shop logo" title="Shop logo" width="108" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td class="es-m-txt-c" align="left" style="padding:0;Margin:0;padding-bottom:5px;padding-top:10px">

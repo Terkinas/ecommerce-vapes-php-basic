@@ -130,7 +130,7 @@
                                                                                     <table width="100%" cellspacing="0" cellpadding="0">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td class="esd-block-image es-p20t es-p25b es-p35r es-p35l" align="center" style="font-size:0"><a target="_blank" href="https://viewstripo.email/"><img src="https://tlr.stripocdn.email/content/guids/CABINET_75694a6fc3c4633b3ee8e3c750851c02/images/83001522239333914.png" alt="ship" style="display: block;" title="ship" width="150"></a></td>
+                                                                                                <td class="esd-block-image es-p20t es-p25b es-p35r es-p35l" align="center" style="font-size:0"><a target="_blank" href="{{route('products.index')}}"><img src="https://tlr.stripocdn.email/content/guids/CABINET_75694a6fc3c4633b3ee8e3c750851c02/images/83001522239333914.png" alt="ship" style="display: block;" title="ship" width="150"></a></td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="esd-block-text es-p15b" align="center">
