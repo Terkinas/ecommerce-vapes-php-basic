@@ -320,6 +320,15 @@
                 transform: scale(0.75);
                 transform-origin: center;
             }
+
+            .product-name-for-mobile {
+                display: inline-block;
+                width: 180px;
+                white-space: nowrap;
+                overflow: hidden !important;
+                text-overflow: ellipsis;
+                transform: scale(0.75);
+            }
         }
     </style>
 </head>
@@ -609,7 +618,7 @@
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'Nunito', 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px"><br></p>
                                                                     <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" role="presentation">
                                                                         <tr style="border-collapse:collapse">
-                                                                            <td style="padding:0;Margin:0">{{$item['item']->name}}</td>
+                                                                            <td class="product-name-for-mobile" style="padding:0;Margin:0">{{$item['item']->name}}</td>
                                                                             <td style="padding:0;Margin:0;width:60px;text-align:center">{{$item['qty']}}</td>
                                                                             <td style="padding:0;Margin:0;width:100px;text-align:center">€{{number_format($item['item']->price / 100, 2)}}</td>
                                                                         </tr>
