@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $userEmail = 'steve' + strval(rand(50, 2000)) + '@gmail.com';
-
         $randomEmail = [
             "Harry@gmail.com",
             "Bruce@gmail.com",
