@@ -111,17 +111,20 @@ class StripeController extends Controller
 
             // return $order;
             Mail::to($data['billing_details']['email'])->send(new MadePurchase($CartItems, $order, $request->session()->get('cart')));
-            Mail::to('pixartey@gmail.com')->send(new MadePurchase($CartItems, $order, $request->session()->get('cart')));
+            //Mail::to('arnizaq@gmail.com')->send(new MadePurchase($CartItems, $order, $request->session()->get('cart')));
 
             session()->forget('stripe_payment_intent');
 
             // session()->forget('cart');
+            session()->forget('cart');
 
             session()->put('payment_method', ['name' => 'stripe', 'id' => $charge_id]);
 
 
 
-            return back()->with('success', 'Payment is successful, we have sent you an email with all the details');
+            // return back()->with('success', 'Payment is successful, we have sent you an email with all the details');
+
+            return redirect()->route('cart.checkout')->with('success', 'Payment is successful, we have sent you an email with all the details');
         } catch (\Exception $e) {
             return back()->withErrors('Error, try again' . $e);
         }
@@ -134,7 +137,10 @@ class StripeController extends Controller
 
         foreach (session()->get('cart')->items as $item) {
 
-            $checkItem = Product::where('id', $item['item']->id)->where('quantity', '>', $item['qty'])->first();
+
+            unset($data);
+
+            $checkItem = Product::where('id', $item['item']->id)->where('quantity', '>', $item['qty'] - 1)->first();
             if (!$checkItem) {
                 $missingItemQty = Product::where('id', $item['item']->id)->pluck('quantity');
 

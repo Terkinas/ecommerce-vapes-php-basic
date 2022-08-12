@@ -46,7 +46,7 @@ class LogisticsController extends Controller
         try {
             if (auth()->user()->admin) {
                 $order = Order::find($id);
-                //$order->dispatched = !$order->dispatched;
+                $order->dispatched = !$order->dispatched;
                 $order->save();
 
                 Mail::to($request['email'])->send(new OrderDispatched($order, $request['tracklink']));

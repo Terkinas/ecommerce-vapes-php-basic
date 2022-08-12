@@ -55,10 +55,14 @@ class Cart
         }
         $oldQty = $storedItem['qty'];
 
-        $storedItem['qty'] = $quantity;
-        $storedItem['price'] = $item->price * $storedItem['qty'];
-        $this->items[$id] = $storedItem;
-        $this->totalQty += $quantity - $oldQty;
-        $this->totalPrice += ($item->price * $quantity) - ($item->price * $oldQty);
+        if ($quantity > 0) {
+            $storedItem['qty'] = $quantity;
+            $storedItem['price'] = $item->price * $storedItem['qty'];
+            $this->items[$id] = $storedItem;
+            $this->totalQty += $quantity - $oldQty;
+            $this->totalPrice += ($item->price * $quantity) - ($item->price * $oldQty);
+        } else {
+            $storedItem['qty'] = $oldQty;
+        }
     }
 }

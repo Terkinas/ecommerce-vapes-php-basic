@@ -99,6 +99,9 @@ Route::prefix('cart')->group(function () {
     Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
+Route::get('/purchase/receipt', function () {
+    return view('emails.purchase');
+})->name('purchase.receipt');
 
 Route::middleware([
     'auth:sanctum',

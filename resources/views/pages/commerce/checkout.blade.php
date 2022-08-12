@@ -201,7 +201,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
                                 Email
                             </label>
 
-                            <input placeholder="" required name="email" class="rounded shadow-sm border-gray-200 w-full text-sm p-2.5" type="email" id="customer_email" />
+                            <input placeholder="" value="{{ old('email') }}" required name="email" class="rounded shadow-sm border-gray-200 w-full text-sm p-2.5" type="email" id="customer_email" />
                         </div>
 
                         <!-- <div class="col-span-6">

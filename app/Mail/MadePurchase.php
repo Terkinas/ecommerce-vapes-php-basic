@@ -34,6 +34,8 @@ class MadePurchase extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.purchase');
+        return $this->from($address = 'noreply@example.com', $name = 'Baryga.lt')
+            ->subject('We have received your order!')
+            ->view('emails.purchase');
     }
 }
