@@ -281,43 +281,45 @@
 
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-white pt-16 md:w-4/5 mx-auto">
-    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl px-4 lg:px-10">Populiariausia prekė</h2>
+    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl px-4 lg:px-10">Populiariausios prekės</h2>
     <div class="max-w-2xl mx-auto pb-12 pt-8 sm:pt-3  px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 sm:pb-12 lg:max-w-7xl lg:px-8 lg:grid-cols-2 lg:mt-8">
         <div class="grid sm:hidden grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
 
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="bg-gray-100 rounded-lg">
+            @foreach ($productsPopular as $popular)
+            <img src="{{ asset('images/products/' . $popular->image_path) }}" alt="product image" class="scale-75 rounded-lg">
+            @endforeach
+
+
+
         </div>
         <div>
-            <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl"> Išmanusis Apple Watch Series 4 laikrodis</h2>
+            <h2 class=" text-xl font-extrabold tracking-tight text-gray-700 sm:text-xl"> Vienkartinės elektroninės cigaretės (spalvotos)</h2>
             <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
 
             <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                 <div class="border-t border-gray-200 pt-4">
                     <dt class="font-medium text-gray-900">Origin</dt>
-                    <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+                    <dd class="mt-2 text-sm text-gray-500">Designed by Baryga Hood, Inc.</dd>
                 </div>
 
                 <div class="border-t border-gray-200 pt-4">
-                    <dt class="font-medium text-gray-900">Apie medžiaga</dt>
-                    <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder coated steel card cover</dd>
+                    <dt class="font-medium text-gray-900">Materials</dt>
+                    <dd class="mt-2 text-sm text-gray-500">Solid battery base with rare earth magnets and flavoured cotton</dd>
                 </div>
 
                 <div class="border-t border-gray-200 pt-4">
-                    <dt class="font-medium text-gray-900">Dydis</dt>
+                    <dt class="font-medium text-gray-900">Size</dt>
                     <dd class="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
                 </div>
 
                 <div class="border-t border-gray-200 pt-4">
                     <dt class="font-medium text-gray-900">Finish</dt>
-                    <dd class="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
+                    <dd class="mt-2 text-sm text-gray-500">Hand soaked and finished with natural oil</dd>
                 </div>
 
                 <div class="border-t border-gray-200 pt-4">
-                    <dt class="font-medium text-gray-900">Papildomi</dt>
-                    <dd class="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
+                    <dt class="font-medium text-gray-900">Extra</dt>
+                    <dd class="mt-2 text-sm text-gray-500">20mg Salt without carbon natural emissions</dd>
                 </div>
 
                 <div class="border-t border-gray-200 pt-4">
@@ -325,19 +327,18 @@
                     <dd class="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with each item.</dd>
                 </div>
             </dl>
-            <a href="/" aria-label="" class="pt-8 mt-4 hover:text-gray-700 inline-flex items-center font-semibold transition-colors duration-200 text-gray-700 hover:text-deep-purple-800">
+            <!-- <a href="/" aria-label="" class="pt-8 mt-4 hover:text-gray-700 inline-flex items-center font-semibold transition-colors duration-200 text-gray-700 hover:text-deep-purple-800">
                 Peržiurėti prekę
                 <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
                     <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
                 </svg>
-            </a>
+            </a> -->
         </div>
 
         <div class="hidden sm:grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="bg-gray-100 rounded-lg">
-            <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="bg-gray-100 rounded-lg">
+            @foreach ($productsPopular as $popular)
+            <img src="{{ asset('images/products/' . $popular->image_path) }}" alt="product image" class="scale-75 rounded-lg">
+            @endforeach
         </div>
     </div>
 
