@@ -4,8 +4,8 @@
 
 
 <main class=" bg-neutral-50 relative overflow-hidden ">
-    <div class="h-fit bg-white  sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-full mx-auto md:rounded-md  sm:my-0 pb-8 relative overflow-hidden">
-        <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="h-full sm:h-96 w-full md:w-3/4 m-auto object-contain" />
+    <div class=" h-fit bg-white  sm:block max-h-72 sm:max-h-96  sm:w-4/5 md:w-full mx-auto md:rounded-md  sm:my-0 pb-8 relative overflow-hidden">
+        <img src="{{ asset('images/commerce/welcome/disposable-vape-header-11.jpg') }}" class="animate-[fadeIn_1s_ease-in] h-full sm:h-96 w-full md:w-3/4 m-auto object-contain" />
     </div>
     <div class="  flex relative items-center overflow-hidden mb-8">
 
@@ -31,11 +31,11 @@
 
 
                 <div class=" sm:w-full md:4/5 lg:w-3/5 flex flex-col relative sm:mt-16 md:mx-auto md:text-center">
-                    <span class="w-20 h-2 bg-green-400 mb-12 rounded-md">
+                    <span class="w-20 h-2 bg-green-400 mb-12 rounded-md animate-[fadeRL_2s_ease-in-out]">
                     </span>
                     <h1 class=" mb-8  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">
                         Gaudyk
-                        <span class="py-2 text-5xl sm:text-6xl">
+                        <span class="py-2 text-5xl sm:text-6xl animate-[fadeIn_1s_ease-in]">
                             Pilką debesį
                         </span>
                     </h1>
