@@ -268,6 +268,7 @@
                 {{ $products->appends(array_filter(request()->except('page')))->render() }}
                 @else
                 {{ $products->links() }}
+
                 @endif
         </div>
         </main> <!-- col.// -->
@@ -337,7 +338,11 @@
 
         <div class="hidden sm:grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
             @foreach ($productsPopular as $popular)
-            <img src="{{ asset('images/products/' . $popular->image_path) }}" alt="product image" class="scale-75 rounded-lg">
+
+            <a href="{{ route('products.show', ['id' => $product->id ,'slug' => $product->urltag]) }}" class=" flex flex-col overflow-hidden ">
+
+                <img src="{{ asset('images/products/' . $popular->image_path) }}" alt="product image" class="scale-75 rounded-lg">
+            </a>
             @endforeach
         </div>
     </div>

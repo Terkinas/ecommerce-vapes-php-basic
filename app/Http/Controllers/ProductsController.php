@@ -275,11 +275,13 @@ class ProductsController extends Controller
             // postgres not support this
             //$products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->whereRaw('UPPER(`name`) LIKE ?', ['%' . strtoupper($keyword) . '%'])->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
 
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->where('name', 'LIKE', '%' . $keyword . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->where('name', 'LIKE', '%' . $keyword . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6)->onEachSide(1);
+
+            $productsPopular = Product::select('id', 'name', 'urltag', 'price', 'color', 'quantity', 'image_path', 'subtitle', 'category')->orderBy('quantity_sold', 'desc')->where('active', 1)->paginate(4)->onEachSide(1);
 
 
             $results = 'These are results we were able to found:';
-            return view('pages.commerce.catalog', compact('products', 'results'));
+            return view('pages.commerce.catalog', compact('products', 'results', 'productsPopular'));
         } catch (\Exception $e) {
             dd($e);
             return redirect()->route('404')->with('error', $e);
