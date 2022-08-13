@@ -67,23 +67,30 @@
                             <i class="fa fa-search"></i>
                         </a>
                         @if(null !== session()->get('cart') && count(session()->get('cart')->items) > 0)
-                        <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md translate-y-0.5 hover:text-gray-500">
+                        <!-- <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md translate-y-0.5 hover:text-gray-500"> -->
+                        <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md hover:text-gray-500">
                             <!-- <i class="fa-solid fa-bag-shopping"></i> -->
-                            <p class="absolute px-1.5 py-1 text-xs scale-50 font-bold text-green-400">{{ count(session()->get('cart')->items) }}</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#4ade80" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
+                            <!-- <p class="absolute px-1.5 py-1 text-xs scale-50 font-bold text-green-400">{{ count(session()->get('cart')->items) }}</p> -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#4ade80" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                            </svg>
+                            </svg> -->
+                            <!-- <p class="absolute px-1 py-2 text-xs scale-75 translate-x-0.5 origin-left font-bold text-white">{{ count(session()->get('cart')->items) }}</p> -->
+
+                            <p class=" px-1 py-2 translate-x-0.5 origin-left font-bold"><i class="fa-solid fa-bucket text-green-400"></i> <span class="text-gray-300 text-xs">{{ count(session()->get('cart')->items) }} </span></p>
+
 
 
 
                             <!-- <span class="text-xs absolute text-gray-500 -translate-x-1 p-1 rounded-lg font-bold scale-75">{{ count(session()->get('cart')->items) }}</span></i> -->
                         </button>
                         @else
-                        <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md translate-y-0.5 hover:text-gray-500">
+                        <!-- <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md translate-y-0.5 hover:text-gray-500"> -->
+                        <button id="openCartButton" class="text-gray-700 px-3 text-lg py-2 inline-block font-semibold rounded-md hover:text-gray-500">
                             <!-- <i class="fa-solid fa-bag-shopping"></i></i> -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                            </svg>
+                            </svg> -->
+                            <i class="fa-solid fa-bucket"></i>
 
 
                         </button>
@@ -169,17 +176,21 @@
 
                     @if(null !== session()->get('cart') && count(session()->get('cart')->items) > 0)
                     <button id="openCartButtonMobile" class="z-102 text-gray-700 overflow-visible px-3 -mt-3  inline-block text-lg rounded-md hover:text-gray-800">
-                        <p class="absolute px-1.5 py-1 text-xs font-bold scale-50 text-green-400">{{ count(session()->get('cart')->items) }}</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#4ade80" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
+                        <!-- <p class="absolute px-1.5 py-1 text-xs font-bold scale-50 text-green-400">{{ count(session()->get('cart')->items) }}</p> -->
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#4ade80" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                        </svg>
+                        </svg> -->
+                        <!-- <i class="fa-solid fa-bucket text-green-400"></i> -->
                         <!-- <i class="fa-solid fa-bag-shopping"></i><span class="text-xs absolute text-gray-500 -translate-x-1 p-1 rounded-lg font-bold scale-75">{{ count(session()->get('cart')->items) }}</span></i> -->
+
+                        <p class=" px-1 py-2 translate-x-0.5 origin-left font-bold"><i class="fa-solid fa-bucket text-green-400"></i> <span class="text-gray-300 text-xs">{{ count(session()->get('cart')->items) }} </span></p>
                     </button>
                     @else
-                    <button id="openCartButtonMobile" class="z-102 text-gray-400 overflow-visible px-3 -mt-3  inline-block ml-1 text-lg rounded-md hover:text-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
+                    <button id="openCartButtonMobile" class="z-102 text-gray-500 overflow-visible px-3 -mt-3  inline-block ml-1 text-lg rounded-md hover:text-gray-300">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag color-gray-900" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                        </svg>
+                        </svg> -->
+                        <i class="fa-solid fa-bucket"></i>
                     </button>
                     @endif
                     <!-- <button id="openCartButtonMobile" class="text-gray-500 px-3 py-2 inline-block ml-1 rounded-md hover:text-gray-800">
