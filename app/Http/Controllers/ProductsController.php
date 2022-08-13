@@ -266,10 +266,14 @@ class ProductsController extends Controller
     {
         try {
 
-            $keyword = $request->keyword;
+            $keyword = ucwords($request->keyword);
 
-            // $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category')->where('name', 'LIKE', '%' . strtoupper($keyword) . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
-            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->whereRaw('UPPER(`name`) LIKE ?', ['%' . strtoupper($keyword) . '%'])->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+            // $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->where('name', 'LIKE', '%' . strtoupper($keyword) . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+
+            // postgres not support this
+            //$products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->whereRaw('UPPER(`name`) LIKE ?', ['%' . strtoupper($keyword) . '%'])->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
+
+            $products = Product::select('id', 'name', 'urltag', 'price', 'color', 'image_path', 'subtitle', 'category', 'quantity')->where('name', 'LIKE', '%' . $keyword . '%')->orWhere('subtitle', 'LIKE', '%' . $keyword . '%')->orderBy('quantity_sold', 'asc')->paginate(6);
             $results = 'These are results we were able to found:';
             return view('pages.commerce.catalog', compact('products', 'results'));
         } catch (\Exception $e) {
