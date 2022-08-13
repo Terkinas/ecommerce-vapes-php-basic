@@ -13,7 +13,7 @@
             </details>
             <details class="w-full border rounded-lg  cursor-pointer">
                 <summary class="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">What to do, if product description doesn't specify, what I'm wondering of?</summary>
-                <p class="px-4 py-4 pt-1 ml-4 -mt-4 dark:text-gray-400 text-gray-600">Contact us via email pagalba@tigi.lt and we will kindly answer your unclarity in 1 business day. </p>
+                <p class="px-4 py-4 pt-1 ml-4 -mt-4 dark:text-gray-400 text-gray-600">Contact us via email help@pixartey.com and we will kindly answer your unclarity in 1 business day. </p>
             </details>
         </div>
     </div>

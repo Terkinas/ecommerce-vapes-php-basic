@@ -6,7 +6,7 @@
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Describe your question</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Submit your question and we will answer, usually it takes 1-2 business days to answer.</p>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Submit your question and we will answer, usually it takes <br /><span class="text-red-400">1-2 business days</span> to answer.</p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
             <div class="flex flex-wrap -m-2">
@@ -29,10 +29,11 @@
                     </div>
                 </div>
                 <div class="p-2 w-full">
-                    <button class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Submit</button>
+                    <button class="flex mx-auto       shadow bg-green-400 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded flex items-center justify-center px-6 py-3">Submit</button>
+
                 </div>
                 <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                    <a class="text-indigo-500">help@pixartey.com</a>
+                    <a href="mailto: pixartey@gmail.com" class="text-red-400 text-sm font-semibold">help@pixartey.com</a>
 
 
                 </div>

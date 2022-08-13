@@ -35,7 +35,7 @@
                     </span>
                     <h1 class=" mb-8  font-bebas-neue uppercase text-4xl sm:text-5xl font-black flex flex-col leading-none text-gray-800 md:text-7xl">
                         Gaudyk
-                        <span class="py-2 text-5xl sm:text-6xl animate-[fadeIn_1s_ease-in]">
+                        <span class="py-2 text-5xl sm:text-6xl">
                             Pilką debesį
                         </span>
                     </h1>
@@ -57,7 +57,7 @@
                     @if(count($products) > 0)
 
                     <h2 class="mx-4 max-w-lg mb-3 font-sans text-xs font-bold tracking-tight sm:text-sm sm:leading-none
-            md:w-4/5 md:text-center md:mx-auto text-center uppercase text-blue-500 scale-75">
+            md:w-4/5 md:text-center md:mx-auto text-center uppercase text-blue-500 scale-75 animate-[fadeIn_1s_ease-in]">
                         Hurry up to buy <br class="hidden md:block" />
 
                     </h2>

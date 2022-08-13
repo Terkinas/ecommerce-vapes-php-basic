@@ -7,9 +7,9 @@
                 </div>
 
                 <p class="max-w-md mx-auto mt-6 leading-relaxed text-left text-gray-500 sm:max-w-xs sm:mx-0 sm:text-left">
-                <p class="text-base text-body-color mb-7">
+                <p class="text-sm font-semibold text-body-color text-gray-500 mb-7">
                     If you have any questions, leave it to us and we will answer in 1-2 business days: <br />
-                    <a href="mailto:arnizaq@gmail.com" class="text-blue-600">help@pixartey.com</a>
+                    <a href="mailto:arnizaq@gmail.com" class="text-red-400 font-semibold text-sm">help@pixartey.com</a>
                 </p>
                 </p>
 
@@ -128,7 +128,7 @@
 
                             <li>
                                 <a class="flex group justify-start gap-1.5 sm:justify-start" href="/">
-                                    <span class="text-gray-700 transition group-hover:text-gray-700/75">
+                                    <span class="text-gray-700 transition font-semibold group-hover:text-gray-700/75">
                                         Live chat
                                     </span>
 
