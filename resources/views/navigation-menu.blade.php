@@ -183,7 +183,7 @@
                         <!-- <i class="fa-solid fa-bucket text-green-400"></i> -->
                         <!-- <i class="fa-solid fa-bag-shopping"></i><span class="text-xs absolute text-gray-500 -translate-x-1 p-1 rounded-lg font-bold scale-75">{{ count(session()->get('cart')->items) }}</span></i> -->
 
-                        <p class=" px-1 py-2 translate-x-0.5 origin-left font-bold"><i class="fa-solid fa-bucket text-green-400"></i> <span class="text-gray-300 text-xs absolute">{{ count(session()->get('cart')->items) }} </span></p>
+                        <p class=" px-1 py-2 translate-x-0.5 origin-left font-bold flex"><i class="fa-solid fa-bucket text-green-400"></i> <span class="text-gray-300 text-xs ml-1">{{ count(session()->get('cart')->items) }} </span></p>
                     </button>
                     @else
                     <button id="openCartButtonMobile" class="z-102 text-gray-500 overflow-visible px-3 -mt-3  inline-block ml-1 text-lg rounded-md hover:text-gray-300">
