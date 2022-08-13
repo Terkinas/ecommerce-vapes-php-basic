@@ -243,11 +243,11 @@
     <!-- photos feautures -->
 
 
-    <div class="bg-white sm:w-4/5 mx-auto rounded mt-24 mb-8">
+    <div class="bg-white sm:w-4/5 mx-auto rounded mt-24 mb-8 py-12">
         <div class="py-12 max-w-2xl mx-auto  px-4 grid items-center grid-cols-1  gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
             <div>
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-4xl">Hitting the ground!</h2>
-                <p class="mt-4 text-gray-500 mb-2">Follow our blog magazine, don't miss an opportunity to win <span class="text-red-300">prizes</span>, soon we will provide more information on that. Stay tuned!</p>
+                <p class="mt-4 text-gray-500 mb-8 text-sm sm:text-base">Follow our blog magazine, don't miss an opportunity to win <i>prizes</i>, soon we will provide <span class="text-blue-400">more information</span> on that. Stay tuned!</p>
 
 
 
