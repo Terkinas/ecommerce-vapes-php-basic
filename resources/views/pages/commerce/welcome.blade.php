@@ -57,7 +57,7 @@
                     @if(count($products) > 0)
 
                     <h2 class="mx-4 max-w-lg mb-3 font-sans text-xs font-bold tracking-tight sm:text-sm sm:leading-none
-            md:w-4/5 md:text-center md:mx-auto text-center uppercase text-blue-500 scale-75 animate-[fadeIn_1s_ease-in]">
+            md:w-4/5 md:text-center md:mx-auto text-center uppercase text-blue-500 scale-75">
                         Hurry up to buy <br class="hidden md:block" />
 
                     </h2>
@@ -240,6 +240,29 @@
 
 
 
+    <!-- photos feautures -->
+
+
+    <div class="bg-white sm:w-4/5 mx-auto rounded mt-24 mb-8">
+        <div class="py-12 max-w-2xl mx-auto  px-4 grid items-center grid-cols-1  gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-4xl">Hitting the ground!</h2>
+                <p class="mt-4 text-gray-500 mb-2">Follow our blog magazine, don't miss an opportunity to win <span class="text-red-300">prizes</span>, soon we will provide more information on that. Stay tuned!</p>
+
+
+
+            </div>
+            <div class="grid grid-cols-2 grid-rows-1 gap-4 sm:gap-6 lg:gap-8">
+                <img src="{{ asset('images/commerce/welcome/localshop.png') }}" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="bg-gray-100 rounded-lg shadow-sm">
+                <img src="{{ asset('images/commerce/welcome/tshirtbaryga.png') }}" alt="Top down view of walnut card tray with embedded magnets and card groove." class="bg-gray-100 rounded-lg shadow-sm">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
 
 
@@ -348,6 +371,7 @@
         <div class="mx-auto lg:max-w-2xl">
             <div class="relative w-full transition-shadow duration-300 hover:shadow-xl bg-green-100 overflow-hidden rounded-lg">
                 <img class="object-cover object-top w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96" src="{{ asset('images/commerce/welcome/disposable-vapes-video-thumbnail.png') }}" alt="" />
+
                 <a target="_blank" href="https://www.youtube.com/watch?v=F8i2BMsFBik&ab_channel=UnCommonLee" aria-label="Play Video" class="absolute inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 group hover:bg-opacity-25">
                     <div class="flex items-center justify-center w-16 h-16 transition duration-300 transform bg-gray-100 rounded-full shadow-2xl group-hover:scale-110">
                         <svg class="w-10 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
@@ -512,6 +536,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
 
 
